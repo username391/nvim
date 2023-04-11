@@ -1,3 +1,5 @@
+
+
 -- tabs
 vim.o.expandtab   = true
 vim.o.smartindent = true
