@@ -47,7 +47,7 @@ return {
                 prompt_prefix = " ",
                 selection_caret = "ﰲ ",
                 path_display = { "smart" },
-                file_ignore_patterns = { ".git/", "node_modules", "__pycache__" },
+                file_ignore_patterns = { ".git", "node_modules", "__pycache__" },
 
                 mappings = {
                     i = {
