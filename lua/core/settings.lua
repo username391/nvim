@@ -1,6 +1,6 @@
 vim.o.encoding = "utf-8"
--- не уверен, нужно ли это вообще
---vim.o.termencoding = "cp866"
+vim.o.termencoding = "cp866"
+
 
 vim.o.smartindent = true
 vim.o.tabstop     = 4
