@@ -89,3 +89,5 @@ vim.keymap.set("n", "<Space>bl", "<Cmd>BufferOrderByLanguage<CR>", { noremap = t
 vim.keymap.set("n", "<Space>bw", "<Cmd>BufferOrderByWindowNumber<CR>", { noremap = true, silent = true})
 
 
+vim.keymap.set("n", "<leader>ga", ":lua AddToGit()<CR>")
+vim.keymap.set("n", "<leader>gr", ":lua ResetGit()<CR>")
