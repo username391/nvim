@@ -4,7 +4,7 @@ local noremap = { noremap = true }
 -- Комбинации клавиш для nvim-tree
 -- Ctrl + K - показывает данные файла
 --  Сфокусироваться на сайдбаре
-vim.api.nvim_set_keymap("n", "<C-y>", ":NvimTreeFocus<CR>", noremap) 
+vim.api.nvim_set_keymap("n", "<C-y>", ":NvimTreeFocus<CR>", noremap)
 
 --  Закрыть/Открыть сайдбар
 vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeToggle<CR>", noremap)
