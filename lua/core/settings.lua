@@ -1,6 +1,7 @@
+vim.o.encoding = "utf-8"
+-- не уверен, нужно ли это вообще
+--vim.o.termencoding = "cp866"
 
--- tabs
-vim.o.expandtab   = true
 vim.o.smartindent = true
 vim.o.tabstop     = 4
 vim.o.shiftwidth  = 4
@@ -21,5 +22,4 @@ vim.o.fillchars='eob: '
 
 vim.opt.termguicolors    = true
 vim.o.termguicolors      = true
-
 
