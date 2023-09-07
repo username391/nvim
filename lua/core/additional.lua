@@ -4,7 +4,17 @@ local nvim_tree_api = require('nvim-tree.api')
 
 local function getCurrentNode()
 	local node = nvim_tree_api.tree.get_node_under_cursor()
-	return node
+	local filename = ""
+	local absolute_path = ""
+
+	if node and nvim_tree_api.tree.is_tree_buf() then
+		return node
+	else
+		absolute_path = vim.fn.expand("%:p")
+		filename = vim.fn.expand("%:t")
+
+		return { name = filename, absolute_path = absolute_path}
+	end
 end
 
 
