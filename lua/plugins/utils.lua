@@ -37,4 +37,9 @@ return {
         "stevearc/dressing.nvim",
         enabled = true,
     },
+
+	{
+		"tpope/vim-fugitive",
+		enabled = true,
+	}
 }
