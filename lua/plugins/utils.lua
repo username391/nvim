@@ -41,5 +41,13 @@ return {
 	{
 		"tpope/vim-fugitive",
 		enabled = true,
+	},
+
+	{
+		"junegunn/gv.vim",
+		enabled = true,
+		-- GV - commit browser
+		-- GV! - commit browser for current file
+
 	}
 }
