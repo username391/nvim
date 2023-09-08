@@ -10,6 +10,8 @@ vim.o.shiftwidth  = 4
 vim.o.hlsearch = true
 vim.o.shell    = 'cmd.exe'
 vim.o.number   = true
+vim.o.relativenumber = true
+vim.o.signcolumn = "number"
 
 -- fold
 vim.o.foldmethod = 'indent'
@@ -30,7 +32,6 @@ end
 
 function OpenTreeIfNoFileIsOpened()
 	if not IsFile() then
-	
 	else
 		require("nvim-tree.api").tree.open()
 	end
