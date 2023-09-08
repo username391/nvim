@@ -23,3 +23,21 @@ vim.o.fillchars='eob: '
 vim.opt.termguicolors    = true
 vim.o.termguicolors      = true
 
+function IsFile()
+	local bufname = vim.fn.bufname("%")
+	return vim.fn.isdirectory(bufname) == 0
+end
+
+function OpenTreeIfNoFileIsOpened()
+	if not IsFile() then
+	
+	else
+		require("nvim-tree.api").tree.open()
+	end
+end
+
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = function()
+	OpenTreeIfNoFileIsOpened()
+end
+})
