@@ -2,10 +2,10 @@ local pickers = require "telescope.pickers"
 local finders = require "telescope.finders"
 local actions = require "telescope.actions"
 local action_state = require "telescope.actions.state"
+local action_set = require "telescope.actions.set"
 
 
 Themes = {
-    { name = "Catppuccin", cmd = "catppuccin-latte", background = "dark" },
     { name = "Catppuccin Latte", cmd = "catppuccin-latte", background = "light" },
     { name = "Catppuccin Frappe", cmd = "catppuccin-frappe", background = "dark" },
     { name = "Catppuccin Macchiato", cmd = "catppuccin-macchiato", background = "dark" },
@@ -15,7 +15,9 @@ Themes = {
     { name = "Kanagawa Light", cmd = "kanagawa", background = "light" },
     -- тема Material настраивается по другому, слишком сложно
     -- поэтому пока только одна версия
-    { name = "Material", cmd = "material", background = "dark" },
+	-- я пока отключил material, потому что при переключении
+	-- темы возникают артефакты
+    -- { name = "Material", cmd = "material", background = "dark" },
     { name = "Monokai Pro", cmd = "monokai_pro", background = "dark" },
     { name = "Monokai Soda", cmd = "monokai_soda", background = "dark" },
     { name = "Monokai Ristretto", cmd = "monokai_ristretto", background = "dark" },
@@ -65,20 +67,27 @@ local function read_theme()
 end
 
 
-local function set_theme(theme)
+local function set_theme(theme, write_to_file)
     vim.o.background = theme.background
     vim.cmd("colorscheme " .. theme.cmd)
-    write_theme(theme)
+	if write_to_file then
+		write_theme(theme)
+	end
 end
 
 
 function SetThemeFromFile()
     local theme = read_theme()
     if theme then
-        set_theme(theme)
+        set_theme(theme, true)
     else
-        set_theme(Themes[1])
+        set_theme(Themes[1], true)
     end
+end
+
+
+function PreviewTheme(theme)
+	set_theme(theme, false)	
 end
 
 
@@ -95,14 +104,46 @@ function PickTheme()
                 }
             end,
         },
-        attach_mappings = function(prompt_bufnr, _)
+        attach_mappings = function(prompt_bufnr, map)
             actions.select_default:replace(function ()
                 actions.close(prompt_bufnr)
                 local selection = action_state.get_selected_entry()
                 set_theme(Themes[selection.index])
             end)
+
+			action_set.shift_selection:replace(function (_, change)
+				local count = vim.v.count
+				count = count == 0 and 1 or count
+				count = vim.api.nvim_get_mode().mode == "n" and count or 1
+				action_state.get_current_picker(prompt_bufnr):move_selection(change * count)
+
+				local selection = action_state.get_selected_entry()
+				PreviewTheme(Themes[selection.index])
+			end)
+
+			actions.close:replace(function (_)
+				local picker = action_state.get_current_picker(prompt_bufnr)
+				local original_win_id = picker.original_win_id
+				local cursor_valid, original_cursor = pcall(vim.api.nvim_win_get_cursor, original_win_id)
+
+				actions.close_pum(prompt_bufnr)
+
+				require("telescope.pickers").on_close_prompt(prompt_bufnr)
+				pcall(vim.api.nvim_set_current_win, original_win_id)
+				if cursor_valid and vim.api.nvim_get_mode().mode == "i" and picker._original_mode ~= "i" then
+					pcall(vim.api.nvim_win_set_cursor, original_win_id, { original_cursor[1], original_cursor[2] + 1 })
+				end
+
+				SetThemeFromFile()
+			end)
+
+
+			-- mappings
+			map("i", "<Esc>", function(prompt_bufnr)
+				actions.close(prompt_bufnr)
+			end)
             return true
-        end
+        end,
     }):find()
 end
 
