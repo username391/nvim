@@ -1,4 +1,4 @@
-return {
+local M = {
     "nvim-tree/nvim-tree.lua",
     module = true,
     cmd = {
@@ -102,6 +102,11 @@ return {
                 },
                 hide_root_folder = false,
             },
+			filters = {
+				dotfiles = true,
+			}
         }
     end,
 }
+
+return M
