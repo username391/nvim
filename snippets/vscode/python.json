@@ -1,0 +1,10 @@
+{
+    "ifmain": {
+        "prefix": "ifmain",
+        "body": [
+            "if __name__ == '__main__':",
+            "    ...",
+        ],
+        "description": "If main block"
+    }
+}
