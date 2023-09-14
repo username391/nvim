@@ -27,6 +27,8 @@ vim.api.nvim_set_keymap("n", "<C-w>", ":bd!<CR><Cmd>BufferPrevious<CR>", noremap
 -- Пока не знаю, как это исправить
 vim.api.nvim_set_keymap("n", '<C-x>', ':wqa<CR>', noremap)
 
+-- убрать выделение поиска
+vim.api.nvim_set_keymap("n", '<C-h>', ':noh<CR>', noremap)
 
 --[[
 -- Навигация для tmux
