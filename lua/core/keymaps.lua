@@ -1,5 +1,7 @@
 local noremap = { noremap = true }
 
+-- добавляет использование русской клавиатуры для комбинаций клавиш
+vim.cmd(":set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz")
 
 -- Комбинации клавиш для nvim-tree
 -- Ctrl + K - показывает данные файла
