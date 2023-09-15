@@ -31,6 +31,15 @@ M.Themes = {
     { name = "TokyoNight Moon", cmd = "tokyonight-moon", background = "dark" },
     { name = "VSCode Light", cmd = "vscode", background = "light" },
     { name = "VSCode Dark", cmd = "vscode", background = "dark" },
+	{ name = "GitHub Dark", cmd = "github_dark", background = "dark" },
+	{ name = "GitHub Dark Dimmed", cmd = "github_dark_dimmed", background = "dark" },
+	{ name = "GitHub Dark High Contrast", cmd = "github_dark_high_contrast", background = "dark" },
+	{ name = "GitHub Dark Colorblind", cmd = "github_dark_colorblind", backgrond = "dark"},
+	{ name = "GitHub Dark Tritanopia", cmd = "github_dark_tritanopia", background = "dark" },
+	{ name = "GitHub Light", cmd = "github_light", background = "light" },
+	{ name = "GitHub Light High Contrast", cmd = "github_light_high_contrast", background = "light" },
+	{ name = "GitHub Light Colorblind", cmd = "github_light_colorblind", background = "light" },
+	{ name = "GitHub Light Tritanopia", cmd = "github_light_tritanopia", background = "light" },
 }
 
 

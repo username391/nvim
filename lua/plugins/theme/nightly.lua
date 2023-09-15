@@ -15,4 +15,4 @@ require("nightly").setup {
   transparent = false,
 }
 
-vim.cmd "colorscheme nightly"
+-- vim.cmd "colorscheme nightly"

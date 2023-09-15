@@ -1,1 +1,1 @@
-vim.cmd "colorscheme moonbow"
+-- vim.cmd "colorscheme moonbow"

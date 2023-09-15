@@ -22,4 +22,4 @@ require("onenord").setup {
     },
 }
 
-vim.cmd "colorscheme onenord"
+-- vim.cmd "colorscheme onenord"

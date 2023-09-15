@@ -1,1 +1,1 @@
-vim.cmd "colorscheme palenightfall"
+-- vim.cmd "colorscheme palenightfall"

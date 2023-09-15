@@ -65,4 +65,4 @@ plugins = { -- Uncomment the plugins that you use to highlight them
   custom_highlights = {}, -- Overwrite highlights with your own
 }
 
-vim.cmd "colorscheme material"
+-- vim.cmd "colorscheme material"

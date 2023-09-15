@@ -116,4 +116,12 @@ return {
             require "plugins.theme.nightfly"
         end,
     },
+	{
+		"projekt0n/github-nvim-theme",
+		lazy = true,
+		priority = 1000,
+		config = function ()
+			require 'plugins.theme.github-theme'
+		end,
+	}
 }
