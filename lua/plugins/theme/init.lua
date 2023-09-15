@@ -123,5 +123,15 @@ return {
 		config = function ()
 			require 'plugins.theme.github-theme'
 		end,
+	},
+
+	{
+		'rose-pine/neovim',
+		name = 'rose-pine',
+		lazy = true,
+		priority = 1000,
+		config = function ()
+			require 'plugins.theme.rose-pine'
+		end
 	}
 }

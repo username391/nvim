@@ -40,6 +40,8 @@ M.Themes = {
 	{ name = "GitHub Light High Contrast", cmd = "github_light_high_contrast", background = "light" },
 	{ name = "GitHub Light Colorblind", cmd = "github_light_colorblind", background = "light" },
 	{ name = "GitHub Light Tritanopia", cmd = "github_light_tritanopia", background = "light" },
+	{ name = 'Rose Pine', cmd = 'rose-pine', background = 'dark' },
+	{ name = 'Rose Pine Light', cmd = 'rose-pine', background = 'light'}
 }
 
 
