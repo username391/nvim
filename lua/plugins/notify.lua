@@ -6,7 +6,7 @@ return {
 			level = 2,
 			minimum_width = 50,
 			render = "default",
-			stages = "fade",
+			stages = "slide",
 			timeout = 3000,
 			top_down = true,
 		}
