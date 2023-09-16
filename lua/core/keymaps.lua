@@ -20,6 +20,9 @@ vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeFindFileToggle<CR>", noremap)
 -- Сохраняет файл
 vim.api.nvim_set_keymap("n", "<C-s>", ":w!<CR>", noremap)
 
+-- Сохраняет и проверяет файл в некоторых случая
+vim.api.nvim_set_keymap("n", "<leader>c", ":<cmd>write<cr>lua AfterSave()<CR>", noremap)
+
 -- Закрывает текущую вкладку
 vim.api.nvim_set_keymap("n", "<C-w>", ":bd!<CR><Cmd>BufferPrevious<CR>", noremap)
 

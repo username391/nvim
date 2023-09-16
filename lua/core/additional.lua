@@ -43,3 +43,13 @@ end
 function GitReset()
 	RunCommandOnCurrentFile("git reset")
 end
+
+
+function AfterSave()
+	if vim.bo.filetype == "python" then
+		-- vim.cmd(":silent !ruff --fix %")
+		local result = vim.api.nvim_exec("!ruff --fix %", true)
+		notify(result)
+	end
+end
+
