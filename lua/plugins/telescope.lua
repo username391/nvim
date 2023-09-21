@@ -12,23 +12,28 @@ return {
     },
     config = function()
         local telescope = require "telescope"
-
         local actions = require "telescope.actions"
 
         local pickers = {
+			buffers = {
+				ignore_current_buffer = true,
+				sort_lastused = true,
+				prompt_title = "Opened Files",
+			},
+
             oldfiles = {
                 prompt_title = "Recent Files",
             },
         }
 
         local extensions = {
- --           fzf = {
- --               fuzzy = true, -- false will only do exact matching
- --               override_generic_sorter = true, -- override the generic sorter
- --               override_file_sorter = true, -- override the file sorter
- --               case_mode = "smart_case", -- or "ignore_case" or "respect_case"
- --               -- the default case_mode is "smart_case"
- --           },
+           -- fzf = {
+           --     fuzzy = true, -- false will only do exact matching
+           --     override_generic_sorter = true, -- override the generic sorter
+           --     override_file_sorter = true, -- override the file sorter
+           --     case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+           --     -- the default case_mode is "smart_case"
+           -- },
         }
 
         telescope.setup {
@@ -55,10 +60,11 @@ return {
                         ["<A-k>"] = actions.move_selection_previous,
                         ["<Tab>"] = actions.move_selection_next,
                         ["<S-Tab>"] = actions.move_selection_previous,
-                    },
-                    n = {
+						["<Esc>"] = actions.close,
                         [";"] = actions.close,
                     },
+                    -- n = {
+                    -- },
                 },
             },
             pickers = pickers,
@@ -67,6 +73,6 @@ return {
 
         -- To get fzf loaded and working with telescope, you need to call
         -- load_extension, somewhere after setup function:
-        --telescope.load_extension "fzf"
+        -- telescope.load_extension "fzf"
     end,
 }
