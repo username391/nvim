@@ -21,6 +21,7 @@ end
 function RunCommandOnCurrentFile(command)
 	-- notify не будет работать так, как нужно
 	-- если neovim запущен в cmd или powershell
+	-- NOTE: нужно попробовать заменить io.popen на vim.api.nvim_exec(cmd, true)
 	local node = getCurrentNode()
 	local handle = io.popen(command .. " " .. node.absolute_path)
 	local result = ""
