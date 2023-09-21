@@ -40,3 +40,7 @@ npm i -g pyright
 
 > Значительная часть конфига нагло сворована [отсюда](https://github.com/Alexis12119/nvim-config/tree/master)
 
+
+#### Neovim-QT
+Для установки шрифта можно использовать команду
+`set guifont=*` и после этого выбрать шрифт
