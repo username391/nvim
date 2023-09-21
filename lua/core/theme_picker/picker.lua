@@ -57,16 +57,11 @@ function PickTheme()
             end,
         },
 
-        attach_mappings = function(_, map)
+        attach_mappings = function(_, _)
 			actions.select_default:replace(select_default)
    			action_set.shift_selection:replace(shift_selection)
 			actions.close:replace(close)
 
-			-- Чтобы при нажатии на esc не переходил в normal mode,
-			-- а закрывал telescope
-			map("i", "<Esc>", function(prompt_bufnr)
-				close(prompt_bufnr)
-			end)
             return true
         end,
     })
