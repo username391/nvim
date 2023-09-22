@@ -55,6 +55,7 @@ local M = {
                 ignore_list = {},
             },
             renderer = {
+				root_folder_label = false,
                 icons = {
                     glyphs = {
                         default = "",
@@ -100,7 +101,7 @@ local M = {
                         col = 1,
                     },
                 },
-                hide_root_folder = true,
+                -- hide_root_folder = true,
             },
 			filters = {
 				dotfiles = true,
