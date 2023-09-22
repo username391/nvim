@@ -11,3 +11,14 @@ noremap <kMinus> :call AdjustFontSize(-1)<CR>
 inoremap <C-kPlus> <Esc>:call AdjustFontSize(1)<CR>a
 inoremap <C-kMinus> <Esc>:call AdjustFontSize(-1)<CR>a
 
+
+" set buffer name as window title
+set title
+
+" предполагаю, что это не особо нужно
+" GuiWindowOpacity 0.97
+
+" inoremap <leader-f> :call GuidWindowFullScreen(1)<CR>
+
+" GuiWindowFullScreen(1)
+
