@@ -100,7 +100,7 @@ local M = {
                         col = 1,
                     },
                 },
-                hide_root_folder = false,
+                hide_root_folder = true,
             },
 			filters = {
 				dotfiles = true,
