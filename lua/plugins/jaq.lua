@@ -14,7 +14,7 @@ return {
                 external = {
                     typescript = "tsc % && node $fileBase",
                     javascript = "node %",
-                    python = "python3 $file",
+                    python = "python $file",
                     rust = "rustc % && $fileBase",
                     -- Competitive Programming
                     -- cpp = "g++ -std=c++17 -Wall -DAL -O2 % -o $fileBase && $fileBase<input.txt",
