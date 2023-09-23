@@ -17,6 +17,7 @@ return {
     {
         "iamcco/markdown-preview.nvim",
 		lazy = true,
+		enabled = true,
         build = function()
             vim.fn["mkdp#util#install"]()
         end,
@@ -50,5 +51,36 @@ return {
 		-- GV - commit browser
 		-- GV! - commit browser for current file
 
+	},
+	  {
+      'tzachar/local-highlight.nvim',
+      config = function()
+        require('local-highlight').setup()
+      end
+	},
+
+	{
+		"stsewd/isort.nvim",
+		as = "isort",
+		enabled = true,
+		-- config = function ()
+			-- require("isort").setup()
+		-- end
+	},
+
+	{
+		"VonHeikemen/fine-cmdline.nvim",
+		dependencies = {
+			"MunifTanjim/nui.nvim"
+		}
+	},
+
+	{
+		"nvim-focus/focus.nvim",
+		enabled = true,
+		version = false,
+		config = function ()
+			require("focus").setup()
+		end
 	}
 }
