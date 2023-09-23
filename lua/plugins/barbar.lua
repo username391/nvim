@@ -1,5 +1,6 @@
 return {
     'romgrk/barbar.nvim',
+	enabled = false,
 
     config = function()
         require("barbar").setup {
