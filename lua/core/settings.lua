@@ -1,6 +1,7 @@
 vim.o.encoding = "utf-8"
 vim.o.termencoding = "cp866"
 
+vim.o.updatetime = 400
 
 vim.o.smartindent = true
 vim.o.tabstop     = 4
@@ -25,20 +26,3 @@ vim.o.fillchars='eob: '
 vim.opt.termguicolors    = true
 vim.o.termguicolors      = true
 
-function IsFile()
-	local bufname = vim.fn.bufname("%")
-	return vim.fn.isdirectory(bufname) == 0
-end
-
-function OpenTreeIfNoFileIsOpened()
-	if not IsFile() then
-	else
-		require("nvim-tree.api").tree.open()
-	end
-end
-
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = function()
-	-- OpenTreeIfNoFileIsOpened()
-end
-})
