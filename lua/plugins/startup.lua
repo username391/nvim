@@ -26,6 +26,28 @@ local headers = {
 		[[  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ]],
 		[[  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ]],
 	},
+	man_with_glasses = {
+        [[⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣱⣿⣿⣿⣿⣿⣿⣿⡉⠙⣷⡿⠿⣿⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],
+        [[⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣺⣮⣛⣿⣿⣿⡿⠋⠉⠁⠀⠀⠀⠀⢉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],
+        [[⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],
+        [[⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],
+        [[⣻⣿⠿⠛⢻⣿⣿⣿⣿⣿⠿⢿⣿⣿⣿⣧⣴⣶⣶⣿⣶⢦⣶⣾⣦⠤⢤⠾⡄⠼⢻⣽⣿⣿⣿⣿⣿⣿⣿⣿]],
+        [[⣿⣿⠀⠀⠀⣿⣿⣿⣿⣏⡏⠁⡉⠻⣿⠀⠀⠀⠉⠙⡃⠀⠀⠁⡿⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],
+        [[⣿⣿⠀⠀⢼⣿⣿⣿⣿⣿⡄⠟⠑⠀⢻⠀⠀⠀⠀⠀⠀⠀⠀⠐⠁⠀⠀⠀⠀⣯⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿]],
+        [[⣿⣿⣿⢸⣿⣿⣿⣿⡿⢿⣿⣤⣀⣠⢸⡀⠀⠀⠀⠀⠀⠀⠀⠀⢲⣿⠗⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],
+        [[⣿⣿⣿⠈⠙⣿⣿⣿⠀⣸⣿⣿⣿⡏⢸⡅⠀⠀⠀⠀⠀⠀⢤⣀⡬⠥⠀⡀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],
+	},
+	neovim_custom = {
+        [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+        [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣶⣶⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+        [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡀⠀⠀⠀⠀⠀⣀⣀⠈⠉⠉⠁⠀⣀⡀⠀⢀⣀⡀⠀⠀⠀⣀⣀⡀⠀⠀⠀⠀]],
+        [[⠀⠀⠀⣷⣠⠶⠛⠛⠷⣦⠀⠀⢀⣤⠖⠛⠛⠳⢦⡀⠀⢀⣴⠶⠛⠛⠳⣦⡀⠸⣿⣿⡄⠀⠀⠀⣸⣿⡿⢸⣿⣿⡇⢸⣿⣿⣾⣿⣿⣿⣧⣴⣿⣿⣿⣿⣷⡀⠀⠀]],
+        [[⠀⠀⠀⣿⠁⠀⠀⠀⠀⢹⡇⠀⣾⠃⠀⠀⠀⠀⠈⣧⠀⣾⠃⠀⠀⠀⠀⠈⢿⡄⢹⣿⣷⠀⠀⢠⣿⣿⠁⢸⣿⣿⡇⢸⣿⣿⠁⠀⠀⢹⣿⣿⠁⠀⠈⣿⣿⡇⠀⠀]],
+        [[⠀⠀⠀⣿⠀⠀⠀⠀⠀⢸⡇⠠⣿⠛⠛⠛⠛⠛⠛⠛⢰⣿⠀⠀⠀⠀⠀⠀⢸⡇⠀⢿⣿⣇⢀⣿⣿⠇⠀⢸⣿⣿⡇⢸⣿⣿⠀⠀⠀⢸⣿⣿⠀⠀⠀⣿⣿⡇⠀⠀]],
+        [[⠀⠀⠀⣿⠀⠀⠀⠀⠀⢸⡇⠀⣿⡀⠀⠀⠀⠀⠀⠀⠈⣿⠀⠀⠀⠀⠀⠀⣸⡇⠀⠈⣿⣿⣼⣿⡟⠀⠀⢸⣿⣿⡇⢸⣿⣿⠀⠀⠀⢸⣿⣿⠀⠀⠀⣿⣿⡇⠀⠀]],
+        [[⠀⠀⠀⣿⠀⠀⠀⠀⠀⢸⡇⠀⠘⢷⣄⡀⠀⢀⣠⡤⠀⠙⢧⣀⠀⠀⢀⣴⠟⠀⠀⠀⠸⣿⣿⡿⠀⠀⠀⢸⣿⣿⡇⢸⣿⣿⠀⠀⠀⢸⣿⣿⠀⠀⠀⣿⣿⡇⠀⠀]],
+        [[⠀⠀⠀⠉⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠉⠙⠛⠉⠁⠀⠀⠀⠀⠉⠙⠛⠉⠁⠀⠀⠀⠀⠀⠉⠉⠁⠀⠀⠀⠈⠉⠉⠁⠈⠉⠉⠀⠀⠀⠈⠉⠉⠀⠀⠀⠉⠉⠁⠀⠀]],
+	}
 }
 
 local group = vim.api.nvim_create_augroup("Startup", { clear = true })
@@ -41,14 +63,15 @@ local M = {
 }
 
 M.status_line = function()
+	local lazystat = require("lazy").stats()
     local clock = " " .. os.date("%H:%M")
     local date = " " .. os.date("%d.%m.%y")
-	-- local total_plugins = require("lazy").stats().count
-	-- local version = vim.version()
-	-- local nvim_version_info = "  Neovim v" .. version.major .. "." .. version.minor .. "." .. version.patch
-	--
-	-- return " " .. total_plugins .. " plugins" .. nvim_version_info
-    return { clock .. " " .. date }
+	local total_plugins = lazystat.count
+	local loaded = lazystat.loaded
+	local version = vim.version()
+	local nvim_version_info = "  Neovim v" .. version.major .. "." .. version.minor .. "." .. version.patch
+
+	return { " " .. loaded .. " / " .. total_plugins .. " plugins" .. nvim_version_info .. " " .. clock .. " " .. date }
 end
 
 
@@ -58,14 +81,24 @@ M.opts = {
 		align = "center",
 		fold_section = false,
 		title = "Header",
-		content = headers.hydra,
+		content = headers.neovim,
 		highlight = "Type",
 		default_color = ""
 	},
 
 	sub_header = {
         type = "text",
-        content = M.status_line(),
+		content = function()
+			local lazystat = require("lazy").stats()
+			local clock = " " .. os.date("%H:%M")
+			local date = " " .. os.date("%d.%m.%y")
+			local total_plugins = lazystat.count
+			local loaded = lazystat.loaded
+			local version = vim.version()
+			local nvim_version_info = "  Neovim v" .. version.major .. "." .. version.minor .. "." .. version.patch
+
+			return { " " .. loaded .. " / " .. total_plugins .. " plugins" .. nvim_version_info .. " " .. clock .. " " .. date }
+		end,
         oldfiles_directory = false,
         align = "center",
         fold_section = false,
@@ -73,7 +106,6 @@ M.opts = {
         margin = 0,
         highlight = "Variable",
         default_color = "",
-        -- oldfiles_amount = 10,
     },
 
 	body = {
@@ -97,7 +129,7 @@ M.opts = {
 		align = "center",
 		fold_section = true,
 		title = "Last Files",
-		margin = 15,
+		margin = 0,
 		content = {},
 		highlight = "Variable",
 		default_color = "",
