@@ -45,16 +45,14 @@ vim.api.nvim_set_keymap('n',  'C-k', '<cmd>TmuxNavigateUp<CR>', {})
 
 
 
--- тут по сути только комбинации клавиш
 local builtin = require("telescope.builtin")
 
-vim.keymap.set("n", "<c-p>",          builtin.find_files, {})
-vim.keymap.set("n", "<Space><Space>", builtin.oldfiles,   {})
-vim.keymap.set("n", "<Space>fg",      builtin.live_grep,  {})
-vim.keymap.set("n", "<Space>fh",      builtin.help_tags,  {})
+vim.keymap.set("n", "<C-p>", builtin.find_files, {})
+vim.keymap.set("n", "<Space><Space>", builtin.oldfiles, {})
+vim.keymap.set("n", "<Space>fg", builtin.live_grep, {})
+vim.keymap.set("n", "<Space>fh", builtin.help_tags, {})
+vim.keymap.set("n", "U", builtin.buffers, {})
 
--- показать все открытые буферы
-vim.api.nvim_set_keymap("n", "U", ":Telescope buffers<CR>", noremap_silent)
 
 -- BarBar
 -- Это все должно быть удалено наверное
