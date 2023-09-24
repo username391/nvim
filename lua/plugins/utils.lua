@@ -35,11 +35,6 @@ return {
         },
     },
 
-    {
-        "stevearc/dressing.nvim",
-        enabled = true,
-    },
-
 	{
 		"tpope/vim-fugitive",
 		enabled = true,
@@ -52,19 +47,18 @@ return {
 		-- GV! - commit browser for current file
 
 	},
-	  {
+
+	{
       'tzachar/local-highlight.nvim',
       config = function()
         require('local-highlight').setup()
       end
 	},
 
-
 	{
 		"VonHeikemen/fine-cmdline.nvim",
 		dependencies = {
 			"MunifTanjim/nui.nvim"
 		}
-	},
-
+	}
 }
