@@ -104,7 +104,7 @@ vim.api.nvim_set_keymap("n", "<leader>gr", ":lua GitReset()<CR>", noremap)
 
 
 -- delete current word and switch to insert mode
-vim.keymap.set("n", "yw", "viwda")
+vim.keymap.set("n", "yw", "viwdi")
 
 -- switch between splits
 vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
