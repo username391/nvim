@@ -19,10 +19,9 @@ end
 
 
 function RunCommandOnCurrentFile(command)
+	local node = getCurrentNode()
 	-- notify не будет работать так, как нужно
 	-- если neovim запущен в cmd или powershell
-	-- NOTE: нужно попробовать заменить io.popen на vim.api.nvim_exec(cmd, true)
-	local node = getCurrentNode()
 	local handle = io.popen(command .. " " .. node.absolute_path)
 	local result = ""
 
@@ -45,7 +44,7 @@ function GitReset()
 	RunCommandOnCurrentFile("git reset")
 end
 
-
+-- Это кстати не работает
 function AfterSave()
 	if vim.bo.filetype == "python" then
 		-- vim.cmd(":silent !ruff --fix %")
