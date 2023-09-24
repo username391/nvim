@@ -42,7 +42,7 @@ M.config = function()
 		defaults = {
 			layout_config = {
 				width = 0.8,
-				prompt_position = "top",
+				prompt_position = "bottom",
 				preview_cutoff = 120,
 				horizontal = { mirror = false },
 				vertical = { mirror = false },
@@ -54,7 +54,7 @@ M.config = function()
 			prompt_prefix = " ",
 			selection_caret = "ﰲ ",
 			path_display = { "smart" },
-			file_ignore_patterns = { ".git", "node_modules", "__pycache__" },
+			file_ignore_patterns = { ".git", ".ruff", "node_modules", "__pycache__" },
 
 			mappings = {
 				i = {
