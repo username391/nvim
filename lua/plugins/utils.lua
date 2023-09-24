@@ -75,12 +75,4 @@ return {
 		}
 	},
 
-	{
-		"nvim-focus/focus.nvim",
-		enabled = true,
-		version = false,
-		config = function ()
-			require("focus").setup()
-		end
-	}
 }
