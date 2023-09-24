@@ -1,4 +1,5 @@
 local noremap = { noremap = true }
+local noremap_silent = { noremap = true, silent = true }
 
 -- добавляет использование русской клавиатуры для комбинаций клавиш
 vim.cmd(":set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz")
@@ -24,7 +25,7 @@ vim.api.nvim_set_keymap("n", "<C-s>", ":w!<CR>", noremap)
 vim.api.nvim_set_keymap("n", "<leader>c", ":<cmd>write<cr>lua AfterSave()<CR>", noremap)
 
 -- Закрывает текущую вкладку
-vim.api.nvim_set_keymap("n", "<C-w>", ":bd!<CR><Cmd>BufferPrevious<CR>", noremap)
+-- vim.api.nvim_set_keymap("n", "<C-w>", ":bd!<CR><Cmd>BufferPrevious<CR>", noremap)
 
 -- Сохраняет все и закрывает nvim
 -- Проблема в том, что это не работает,
@@ -33,7 +34,7 @@ vim.api.nvim_set_keymap("n", "<C-w>", ":bd!<CR><Cmd>BufferPrevious<CR>", noremap
 vim.api.nvim_set_keymap("n", '<C-x>', ':wqa<CR>', noremap)
 
 -- убрать выделение поиска
-vim.api.nvim_set_keymap("n", '<C-h>', ':noh<CR>', noremap)
+vim.api.nvim_set_keymap("n", '<S-x>', ':noh<CR>', noremap)
 
 --[[
 -- Навигация для tmux
@@ -52,9 +53,11 @@ vim.keymap.set("n", "<Space><Space>", builtin.oldfiles,   {})
 vim.keymap.set("n", "<Space>fg",      builtin.live_grep,  {})
 vim.keymap.set("n", "<Space>fh",      builtin.help_tags,  {})
 
-vim.api.nvim_set_keymap("n", "U", ":Telescope buffers<CR>", { noremap = true, silent = true })
+-- показать все открытые буферы
+vim.api.nvim_set_keymap("n", "U", ":Telescope buffers<CR>", noremap_silent)
 
 -- BarBar
+-- Это все должно быть удалено наверное
 vim.keymap.set("n", "<A-,>", "<Cmd>BufferPrevious<CR>", { noremap = true, silent = true})
 vim.keymap.set("n", "<A-.>", "<Cmd>BufferNext<CR>", { noremap = true, silent = true})
 
@@ -98,6 +101,29 @@ vim.keymap.set("n", "<Space>bl", "<Cmd>BufferOrderByLanguage<CR>", { noremap = t
 vim.keymap.set("n", "<Space>bw", "<Cmd>BufferOrderByWindowNumber<CR>", { noremap = true, silent = true})
 
 
-vim.keymap.set("n", "<leader>ga", ":lua GitAdd()<CR>")
-vim.keymap.set("n", "<leader>gr", ":lua GitReset()<CR>")
---vim.keymap.set("n", "<Space>i", ":lua Test()<CR>")
+vim.api.nvim_set_keymap("n", "<leader>ga", ":lua GitAdd()<CR>", noremap)
+vim.api.nvim_set_keymap("n", "<leader>gr", ":lua GitReset()<CR>", noremap)
+
+
+-- delete current word and switch to insert mode
+vim.keymap.set("n", "yw", "viwdi")
+
+-- switch between splits
+vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
+vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
+vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
+vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
+
+-- Open cmd line
+vim.api.nvim_set_keymap('n', 'zz', '<cmd>FineCmdline<CR>', {noremap = true})
+
+-- Splits
+vim.api.nvim_set_keymap("n", "zv", ":vsplit<CR>", noremap_silent)
+vim.api.nvim_set_keymap("n", "zh", ":split<CR>", noremap_silent)
+vim.api.nvim_set_keymap("n", "zc", ":only<CR>", noremap_silent)
+
+vim.api.nvim_set_keymap("n", "zrh", ":vertical resize -1<CR>", noremap_silent)
+vim.api.nvim_set_keymap("n", "zrl", ":vertical resize +1<CR>", noremap_silent)
+vim.api.nvim_set_keymap("n", "zrk", ":resize +1<CR>", noremap_silent)
+vim.api.nvim_set_keymap("n", "zrj", ":resize -1<CR>", noremap_silent)
+
