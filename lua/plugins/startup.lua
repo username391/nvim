@@ -151,6 +151,7 @@ M.opts = {
 		background = "#1f2227",
 		folded_section = "#FFb6c2",
 	},
+
 	mappings = {
 		execute_command = "<CR>",
 		open_file = "o",
