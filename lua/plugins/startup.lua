@@ -43,6 +43,11 @@ local M = {
 M.status_line = function()
     local clock = " " .. os.date("%H:%M")
     local date = " " .. os.date("%d.%m.%y")
+	-- local total_plugins = require("lazy").stats().count
+	-- local version = vim.version()
+	-- local nvim_version_info = "  Neovim v" .. version.major .. "." .. version.minor .. "." .. version.patch
+	--
+	-- return " " .. total_plugins .. " plugins" .. nvim_version_info
     return { clock .. " " .. date }
 end
 
