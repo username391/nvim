@@ -5,7 +5,7 @@ local M = {
 
 M.event = { "BufReadPost", "BufNewFile" }
 M.config = function()
-	local lspsaga = require "lspsaga"
+	local lspsaga = require("lspsaga")
 
 	lspsaga.setup {
 		preview = {
@@ -130,3 +130,4 @@ M.config = function()
 end
 
 return M
+

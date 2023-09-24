@@ -1,8 +1,9 @@
-return {
-    "numToStr/Comment.nvim",
-    --event = { "BufReadPost", "BufNewFile" },
-	lazy = false,
-	opts = {
-
-	}
+local M = {
+    "numToStr/Comment.nvim"
 }
+M.event = { "BufReadPost", "BufNewFile" }
+M.lazy = true
+M.opts = {}
+
+return M
+
