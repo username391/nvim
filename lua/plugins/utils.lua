@@ -59,14 +59,6 @@ return {
       end
 	},
 
-	{
-		"stsewd/isort.nvim",
-		as = "isort",
-		enabled = true,
-		-- config = function ()
-			-- require("isort").setup()
-		-- end
-	},
 
 	{
 		"VonHeikemen/fine-cmdline.nvim",
