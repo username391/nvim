@@ -1,5 +1,6 @@
 return {
     "nvim-lualine/lualine.nvim",
+
     event = { "BufReadPost", "BufNewFile" },
     config = function()
         local theme = {
@@ -51,7 +52,8 @@ return {
                 icons_enabled = true,
                 component_separators = { left = "", right = "" },
                 section_separators = { left = "", right = "" },
-                theme = theme,
+
+				theme = theme,
                 disabled_filetypes = {
                     "dashboard",
                     "lspinfo",
@@ -64,10 +66,12 @@ return {
                     "alpha",
                     "lazy",
                 },
-                always_divide_middle = true,
+                always_divide_middle = false,
             },
             sections = {
-                lualine_a = {},
+                lualine_a = {
+					statusline.directory,
+				},
                 lualine_b = {},
                 lualine_c = {
                     statusline.branch,
