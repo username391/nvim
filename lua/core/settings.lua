@@ -9,7 +9,7 @@ vim.o.shiftwidth  = 4
 
 -- editor settings
 vim.o.hlsearch = true
-vim.o.shell    = 'cmd.exe'
+vim.o.shell = GetShell()
 vim.o.number   = true
 vim.o.relativenumber = true
 vim.o.signcolumn = "number"
