@@ -53,3 +53,12 @@ function AfterSave()
 	end
 end
 
+
+function GetShell()
+	local os_name = vim.loop.os_uname().sysname
+	if string.sub(os_name, 1, string.len("Windows")) == "Windows" then
+		return "cmd.exe"
+	else
+		return "bash"
+	end
+end
