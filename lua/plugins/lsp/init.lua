@@ -56,7 +56,7 @@ return {
                 local servers = {
                     -- "jsonls",
                     "lua_ls",
-                    "clangd",
+                    -- "clangd",
                     -- "intelephense",
                     "cssls",
                     "html",
@@ -65,11 +65,11 @@ return {
                     "pyright",
                     -- "omnisharp",
                     -- "yamlls",
-                    "gopls",
+                    -- "gopls",
                     -- "lemminx",
                     "vimls",
                     -- "cmake",
-                    "powershell_es",
+                    -- "powershell_es",
                 }
 
                 mason.setup {
