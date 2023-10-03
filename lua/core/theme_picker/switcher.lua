@@ -80,10 +80,15 @@ function M.set_theme(theme, write_to_file)
 	if write_to_file then
 		M.write_theme(theme)
 	end
-	if TransparentBackground == false then
-		vim.o.background = theme.background
-	else
+
+	vim.o.background = theme.background
+	if TransparentBackground == true then
 		vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]
+		vim.cmd[[hi SignColumn guibg=NONE ctermbg=NONE]]
+		vim.cmd[[hi StatusLine guibg=NONE ctermbg=NONE]]
+		-- vim.cmd[[hi StatusLineNC guibg=NONE ctermbg=NONE]]
+		vim.cmd[[hi VertSplit guibg=NONE ctermbg=NONE]]
+
 	end
 end
 
