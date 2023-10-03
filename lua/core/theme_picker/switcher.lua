@@ -76,10 +76,14 @@ end
 
 
 function M.set_theme(theme, write_to_file)
-    vim.o.background = theme.background
     vim.cmd("colorscheme " .. theme.cmd)
 	if write_to_file then
 		M.write_theme(theme)
+	end
+	if TransparentBackground == false then
+		vim.o.background = theme.background
+	else
+		vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]
 	end
 end
 

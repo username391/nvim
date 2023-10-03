@@ -26,3 +26,5 @@ vim.o.fillchars='eob: '
 vim.opt.termguicolors    = true
 vim.o.termguicolors      = true
 
+TransparentBackground = true
+
