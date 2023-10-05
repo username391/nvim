@@ -51,8 +51,8 @@ M.config = function()
 			winblend = 0,
 			selection_strategy = "reset",
 			sorting_strategy = "ascending",
-			prompt_prefix = " ",
-			selection_caret = "ﰲ ",
+			prompt_prefix = "  ",
+			selection_caret = "󱞩 ",
 			path_display = { "smart" },
 			file_ignore_patterns = { ".git", ".ruff", "node_modules", "__pycache__" },
 
