@@ -1,5 +1,4 @@
 local M = {}
-
 local foreground = ""
 
 if vim.o.background == "dark" then
@@ -34,7 +33,7 @@ M.diagnostics = {
     "diagnostics",
     sources = { "nvim_diagnostic" },
     sections = { "error", "warn", "hint" },
-    symbols = { error = " ", warn = " ", hint = " " },
+    symbols = { error = " ", warn = " ", hint = " " },
     diagnostics_color = {
         error = { fg = "#DB4B4B" },
         warn = { fg = "#ECBE7B" },
