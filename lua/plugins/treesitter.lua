@@ -21,16 +21,13 @@ M.dependencies = {
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
 		opts = {
-			char = "▏",
-			show_trailing_blankline_indent = false,
-			show_first_indent_level = true,
-			use_treesitter = true,
-			show_current_context = true,
-			buftype_exclude = { "terminal", "nofile" },
-			filetype_exclude = {
-				"help",
-				"NvimTree",
+			indent = { char = "▏", smart_indent_cap = false }, -- FIXME: maybe smart_indent should be off
+			scope = { show_start = false, show_end = false, enabled = true },
+			exclude = {
+				buftypes = { "terminal", "nofile" },
+				filetypes = { "help", "NvimTree" }
 			},
+			whitespace = { remove_blankline_trail = false }
 		},
 	},
 }
