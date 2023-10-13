@@ -12,6 +12,11 @@ npm i -g pyright
 :MasonUpdate
 ```
 
+Для отображения документации нужно установить еще вот это
+```vim
+:TSInstall markdown markdown_inline
+```
+
 #### Настройка темы
 Комбинация клавиш `Space + t` открывает меню для выбора темы
 
