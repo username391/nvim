@@ -46,6 +46,8 @@ M.setup = function()
     })
 end
 
+
+-- Maybe this should be moved to core/keymaps.lua
 local function lsp_keymaps(bufnr)
     local buf_opts = { buffer = bufnr, silent = true }
     -- keymap("n", "gD", vim.lsp.buf.declaration, buf_opts)
