@@ -95,9 +95,10 @@ M.opts = {
 			local total_plugins = lazystat.count
 			local loaded = lazystat.loaded
 			local version = vim.version()
-			local nvim_version_info = "  Neovim v" .. version.major .. "." .. version.minor .. "." .. version.patch
+			local nvim_version_info = "   Nvim v" .. version.major .. "." .. version.minor .. "." .. version.patch
 
-			return { " " .. loaded .. " / " .. total_plugins .. " plugins" .. nvim_version_info .. " " .. clock .. " " .. date }
+			-- return { "  " .. loaded .. "/" .. total_plugins .. " plugins" .. nvim_version_info .. " " .. clock .. " " .. date }
+			return { "  " .. loaded .. "/" .. total_plugins .. " plugins" .. nvim_version_info }
 		end,
         oldfiles_directory = false,
         align = "center",
@@ -116,7 +117,7 @@ M.opts = {
 		margin = 0,
 		content = {
 			{ " Find File", "Telescope find_files", "<C-p>" },
-			{ " Find Word", "Telescope live_grep", "<Space>fg" },
+			{ " Find Word", "Telescope live_grep", "<Space>fg" },
 			{ " Recent Files", "Telescope oldfiles", "<Space>fo" },
 			{ " New File", ":enew", "e" },
 		},
