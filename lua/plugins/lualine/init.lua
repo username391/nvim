@@ -71,6 +71,7 @@ return {
             sections = {
                 lualine_a = {
 					statusline.directory,
+					statusline.filename,
 				},
                 lualine_b = {},
                 lualine_c = {

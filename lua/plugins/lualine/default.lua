@@ -158,20 +158,26 @@ M.percent = {
         --   color = { fg = foreground, bg = "NONE" },
         -- }
 
-        M.filetype = {
-            "filetype",
-            color = { fg = foreground, bg = "NONE" },
-            pading = 0,
-            separator = { left = "" },
-        }
+M.filetype = {
+	"filetype",
+	color = { fg = foreground, bg = "NONE" },
+	pading = 0,
+	separator = { left = "" },
+}
 
-        M.directory = {
-              function()
-                    return vim.fn.expand "%:p:h:t"
-                  end,
-                  icon = "",
-                  color = { fg = foreground },
-                }
+M.directory = {
+	function()
+		return vim.fn.expand "%:p:h:t"
+	end,
+	icon = "",
+	color = { fg = foreground },
+}
 
-                return M
+M.filename = {
+	"filename",
+	color = { fg = foreground, bg = "NONE" },
+	path = 0
+}
+
+return M
 
