@@ -106,6 +106,13 @@ vim.api.nvim_set_keymap("n", "<leader>gr", ":lua GitReset()<CR>", noremap)
 -- delete current word and switch to insert mode
 vim.keymap.set("n", "yw", "viwdi")
 
+-- delete word starting from cursor
+vim.api.nvim_set_keymap('i', '<C-H>', '<C-W>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<C-H>', '<C-W>', {noremap = true})
+vim.keymap.set("n", "<C-Del>", "ved")
+vim.keymap.set("i", "<C-Del>", "ved")
+
+
 -- switch between splits
 vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
 vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
