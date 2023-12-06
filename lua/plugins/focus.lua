@@ -2,7 +2,7 @@ local M = {
 	"nvim-focus/focus.nvim"
 }
 
-M.enabled = true
+M.enabled = false
 M.version = false
 
 M.config = function ()
