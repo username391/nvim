@@ -1,5 +1,9 @@
+local builtin = require("telescope.builtin")
+local terminal = require("nvterm.terminal")
+
 local noremap = { noremap = true }
 local noremap_silent = { noremap = true, silent = true }
+
 
 -- global clipboard
 vim.keymap.set('n','y','"+y')
@@ -50,9 +54,6 @@ vim.api.nvim_set_keymap('n',  'C-j', '<cmd>TmuxNavigateDown<CR>', {})
 vim.api.nvim_set_keymap('n',  'C-k', '<cmd>TmuxNavigateUp<CR>', {})
 ]]--
 
-
-
-local builtin = require("telescope.builtin")
 
 vim.keymap.set("n", "<C-p>", builtin.find_files, {})
 vim.keymap.set("n", "<Space><Space>", builtin.oldfiles, {})
@@ -139,3 +140,17 @@ vim.api.nvim_set_keymap("n", "zrl", ":vertical resize +1<CR>", noremap_silent)
 vim.api.nvim_set_keymap("n", "zrk", ":resize +1<CR>", noremap_silent)
 vim.api.nvim_set_keymap("n", "zrj", ":resize -1<CR>", noremap_silent)
 
+
+-- nvterm
+
+local toggle_modes = {'n', 't'}
+local mappings = {
+	{ toggle_modes, '<A-h>', function () terminal.toggle('horizontal') end },
+	{ toggle_modes, '<A-v>', function () terminal.toggle('vertical') end },
+	{ toggle_modes, '<A-i>', function () terminal.toggle('float') end },
+}
+
+local opts = { noremap = true, silent = true }
+for _, mapping in ipairs(mappings) do
+	vim.keymap.set(mapping[1], mapping[2], mapping[3], opts)
+end
