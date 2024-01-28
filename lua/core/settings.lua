@@ -28,3 +28,4 @@ vim.o.termguicolors      = true
 
 TransparentBackground = false
 
+vim.cmd("set clipboard+=unnamedplus")
