@@ -11,6 +11,7 @@ return {
 
     {
         "moll/vim-bbye",
+		enabled = false,
 		-- Этот не работает
         cmd = { "Bdelete", "Bwipeout" },
     },
