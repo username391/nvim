@@ -4,6 +4,8 @@ local M = {
 M.module = true
 M.cmd = "WhichKey"
 M.keys = "<leader>"
+M.enabled = false
+
 M.config = function()
 	local which_key = require "which-key"
 
