@@ -1,6 +1,13 @@
 local noremap = { noremap = true }
 local noremap_silent = { noremap = true, silent = true }
 
+-- global clipboard
+vim.keymap.set('n','y','"+y')
+vim.keymap.set('n','yy','"+yy')
+vim.keymap.set('n','Y','"+Y')
+vim.keymap.set('x','y','"+y')
+vim.keymap.set('x','Y','"+Y')
+
 -- добавляет использование русской клавиатуры для комбинаций клавиш
 vim.cmd(":set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz")
 
