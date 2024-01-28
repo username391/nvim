@@ -26,6 +26,12 @@ M.config = function()
 		oldfiles = {
 			prompt_title = "Recent Files",
 		},
+
+		pickers = {
+			colorscheme = {
+				enable_preview = true
+			}
+		}
 	}
 
 	local extensions = {
