@@ -4,6 +4,7 @@ local M = {
 M.module = true
 M.cmd = "ToggleTerm"
 M.event = { "BufReadPost", "BufNewFile" }
+M.enabled = false
 
 M.config = function()
 	local toggleterm = require "toggleterm"
