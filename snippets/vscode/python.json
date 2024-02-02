@@ -81,7 +81,7 @@
 			"logger.add(lambda m: tqdm.write(m, end=''), format=LOG_FORMAT)"
 		],
 		"description": "sets up loguru.logger + tqdm"
-	}
+	},
 
 
 
