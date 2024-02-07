@@ -91,6 +91,7 @@ M.config = function()
 		},
 		view = {
 			cursorline = false,
+			side = "right",
 			float = {
 				enable = false,
 				quit_on_focus_loss = true,
