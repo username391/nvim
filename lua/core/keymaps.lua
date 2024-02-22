@@ -21,6 +21,9 @@ vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeToggle<CR>", noremap)
 --  закрывает/открывает сайдбар
 vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeFindFileToggle<CR>", noremap)
 
+-- GoFmt
+vim.api.nvim_set_keymap("n", "<leader>g", ":w<CR>:GoFmt<CR>", noremap)
+
 
 -- Сохраняет файл
 vim.api.nvim_set_keymap("n", "<C-s>", ":w!<CR>", noremap)
