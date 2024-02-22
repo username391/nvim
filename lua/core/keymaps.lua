@@ -22,7 +22,7 @@ vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeToggle<CR>", noremap)
 vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeFindFileToggle<CR>", noremap)
 
 -- GoFmt
-vim.api.nvim_set_keymap("n", "<leader>g", ":w<CR>:GoFmt<CR>", noremap)
+vim.api.nvim_set_keymap("n", "<Space>g", ":w<CR>:GoFmt<CR>", noremap)
 
 
 -- Сохраняет файл
