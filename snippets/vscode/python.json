@@ -120,7 +120,7 @@
             "",
             "logger.remove()",
             "logger.add(LOG_FILE, format=LOG_FORMAT)",
-            "logger.add(lambda m: tqdm.write(m, end=''), format=LOG_FORMAT)",
+            "logger.add(lambda m: tqdm.write(m, end=''), format=LOG_FORMAT)"
 		],
 		"description": "sets imports and logger"
 	}
