@@ -92,5 +92,36 @@
 			"    'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'"
 		],
 		"description": "sets chrome user agent"
+	},
+
+	"setup_parser": {
+		"prefix": "setup_parser",
+		"body": [
+            "import os",
+            "import time",
+            "import urllib3",
+            "import pathlib",
+            "import requests",
+            "",
+            "",
+            "from bs4 import BeautifulSoup",
+            "from tqdm import tqdm",
+            "from tqdm.contrib.concurrent import thread_map",
+            "from loguru import logger",
+            "from dataclasses import dataclass",
+            "",
+            "",
+            "CWD = pathlib.Path(__file__).parent.resolve()",
+            "LOG_FILE = os.path.join(CWD, 'main.log')",
+            "",
+            "USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '\\",
+            "    'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'",
+            "LOG_FORMAT = '[{time:DD-MM-YYYY HH:mm:ss}] [{level}] {message}'",
+            "",
+            "logger.remove()",
+            "logger.add(LOG_FILE, format=LOG_FORMAT)",
+            "logger.add(lambda m: tqdm.write(m, end=''), format=LOG_FORMAT)",
+		],
+		"description": "sets imports and logger"
 	}
 }
