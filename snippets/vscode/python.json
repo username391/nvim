@@ -1,6 +1,6 @@
 {
     "ifmain": {
-        "prefix": "ifmain1",
+        "prefix": "ifmain",
         "body": [
             "if __name__ == '__main__':",
             "    ..."
@@ -75,8 +75,6 @@
 		],
 		"description": ""
 	},
-
-
 	"set_logger": {
 		"prefix": "set_logger",
 		"body": [
@@ -87,14 +85,6 @@
 		],
 		"description": "sets up loguru.logger + tqdm"
 	},
-
-
-
-
-
-
-
-
 	"useragent": {
 		"prefix": "set_useragent",
 		"body": [
