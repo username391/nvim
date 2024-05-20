@@ -62,5 +62,9 @@ return {
 		dependencies = {
 			"MunifTanjim/nui.nvim"
 		}
+	},
+	{
+		"username391/theme-switcher.nvim",
+		enabled = false,
 	}
 }
