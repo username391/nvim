@@ -65,7 +65,7 @@ return {
                     "pyright",
                     -- "omnisharp",
                     -- "yamlls",
-                    -- "gopls",
+                    "gopls",
                     -- "lemminx",
                     "vimls",
                     -- "cmake",
