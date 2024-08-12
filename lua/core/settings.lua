@@ -1,5 +1,5 @@
 vim.o.encoding = "utf-8"
-vim.o.termencoding = "cp866"
+-- vim.o.termencoding = "cp866"
 
 vim.o.updatetime = 400
 
