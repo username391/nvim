@@ -1,6 +1,9 @@
 local plugins = {
 	{
 		"williamboman/mason.nvim",
+		dependencies = {
+			"williamboman/mason-lspconfig.nvim"
+		},
 		opts = {
 			ensure_installed = {
 				"jsonls",
@@ -26,15 +29,23 @@ local plugins = {
 	{
 		"neovim/nvim-lspconfig",
 		config = function ()
-			require("plugins.lsp.handlers")
+			-- require("plugins.lsp.handlers")
 
 			require("lspconfig").lua_ls.setup {
+
 				settings = {
 					Lua = {
 						workspace = { checkThirdParty = false },
 						diagnostics = { globals = { "vim" } }
 					}
 				}
+			}
+
+			require("lspconfig").pyrigh.setup {
+				filetypes = { "python" },
+				on_attach = function (_, _)
+					vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+				end
 			}
 		end
 

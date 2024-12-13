@@ -1,8 +1,10 @@
+
 local M = {
 	"nvim-treesitter/nvim-treesitter"
 }
 
 M.module = true
+M.enabled = true
 M.event = { "BufReadPost", "BufNewFile" }
 M.cmd = {
 	"TSInstall",
@@ -44,6 +46,7 @@ M.config = function()
 		},
 		autopairs = { enable = true },
 		indent = { enable = true, disable = {} },
+		auto_install = true
 	}
 end
 return M

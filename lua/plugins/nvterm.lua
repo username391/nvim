@@ -1,5 +1,7 @@
+-- Терминал для nvim, больше не обновляется
+-- Вроде как toggleterm это аналог
 local M = {
-  "NvChad/nvterm"
+	"NvChad/nvterm"
 }
 
 M.config = function ()
@@ -16,13 +18,19 @@ M.config = function ()
 					height = 0.4,
 					border = "single",
 				},
-				horizontal = { location = "rightbelow", split_ratio = .3, },
-				vertical = { location = "rightbelow", split_ratio = .5 },
+				horizontal = {
+					location = "rightbelow",
+					split_ratio = .3
+				},
+				vertical = {
+					location = "rightbelow",
+					split_ratio = .5
+				},
 			}
 		},
 		behavior = {
 			autoclose_on_quit = {
-				enabled = false,
+				enabled = true,
 				confirm = true,
 			},
 			close_on_exit = true,

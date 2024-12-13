@@ -1,8 +1,10 @@
+-- Запуск разных autocmd
+-- FIXME: Тут во всем нужно разобраться
+
 local ignore_filetypes = { 'NvimTree' }
 local ignore_buftypes = { 'nofile', 'prompt', 'popup' }
 
-local augroup =
-    vim.api.nvim_create_augroup('FocusDisable', { clear = true })
+local augroup = vim.api.nvim_create_augroup('FocusDisable', { clear = true })
 
 vim.api.nvim_create_autocmd('WinEnter', {
     group = augroup,
@@ -46,3 +48,4 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = function()
 	-- OpenTreeIfNoFileIsOpened()
 end
 })
+

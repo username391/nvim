@@ -117,4 +117,6 @@ if not status_ok then
     return
 end
 
+-- Все настройки плагинов должны быть в папку lua/plugins
 lazy.setup("plugins", opts)
+

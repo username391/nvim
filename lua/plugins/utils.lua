@@ -1,19 +1,30 @@
 return {
-    {
-        "folke/neodev.nvim",
-        lazy = true,
-    },
-
+	{
+		"folke/lazydev.nvim",
+		ft = "lua",
+		opts = {
+			library = {
+				{
+					path = "luvit-meta/library",
+					words = { "vim%.uv" }
+				},
+			},
+		},
+	},
+	{ "Bilal2453/luvit-meta", lazy = true },
+	{
+		"hrsh7th/nvim-cmp",
+		opts = function(_, opts)
+			opts.sources = opts.sources or {}
+			table.insert(opts.sources, {
+				name = "lazydev",
+				group_index = 0,
+			})
+		end,
+	},
     {
         "nvim-lua/plenary.nvim",
         lazy = true,
-    },
-
-    {
-        "moll/vim-bbye",
-		enabled = false,
-		-- Этот не работает
-        cmd = { "Bdelete", "Bwipeout" },
     },
 
     {
@@ -25,7 +36,6 @@ return {
         end,
         ft = "markdown",
     },
-
     {
         "dstein64/vim-startuptime",
         init = function()
@@ -49,22 +59,19 @@ return {
 		-- GV! - commit browser for current file
 
 	},
-
-	{
-      'tzachar/local-highlight.nvim',
-      config = function()
-        require('local-highlight').setup()
-      end
-	},
-
-	{
-		"VonHeikemen/fine-cmdline.nvim",
-		dependencies = {
-			"MunifTanjim/nui.nvim"
-		}
-	},
-	{
-		"username391/theme-switcher.nvim",
-		enabled = false,
-	}
 }
+
+-- 	{
+--       'tzachar/local-highlight.nvim',
+--       config = function()
+--         require('local-highlight').setup()
+--       end
+-- 	},
+--
+-- 	{
+-- 		"VonHeikemen/fine-cmdline.nvim",
+-- 		dependencies = {
+-- 			"MunifTanjim/nui.nvim"
+-- 		}
+-- 	},
+

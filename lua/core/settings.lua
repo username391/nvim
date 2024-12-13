@@ -8,11 +8,11 @@ vim.o.tabstop     = 4
 vim.o.shiftwidth  = 4
 
 -- editor settings
-vim.o.hlsearch = true
-vim.o.shell = GetShell()
-vim.o.number   = true
-vim.o.relativenumber = true
-vim.o.signcolumn = "number"
+vim.o.hlsearch       = true
+vim.o.shell          = GetShell()
+vim.o.number         = true
+vim.o.relativenumber = false
+vim.o.signcolumn     = "number"
 
 -- fold
 vim.o.foldmethod = 'indent'
@@ -22,10 +22,10 @@ vim.o.foldenable = false
 -- disable ~ chars
 vim.o.fillchars='eob: '
 
+vim.opt.termguicolors = true
+vim.o.termguicolors   = true
 
-vim.opt.termguicolors    = true
-vim.o.termguicolors      = true
-
-TransparentBackground = false
+-- TransparentBackground = true
 
 vim.cmd("set clipboard+=unnamedplus")
+

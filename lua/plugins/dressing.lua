@@ -1,3 +1,4 @@
+-- UI для ввода
 local M = {
 	"stevearc/dressing.nvim"
 }
@@ -13,7 +14,9 @@ M.config = function()
 		select = {
 			telescope = {
 				previewer = false,
-				borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
+				borderchars = {
+					" ", " ", " ", " ", " ", " ", " ", " "
+				},
 				layout_strategy = "vertical",
 				layout_config = {
 					height = 0.6,

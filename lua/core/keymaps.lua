@@ -5,148 +5,206 @@ local noremap = { noremap = true }
 local noremap_silent = { noremap = true, silent = true }
 
 
--- добавляет использование русской клавиатуры для комбинаций клавиш
-vim.cmd(":set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz")
-
--- Комбинации клавиш для nvim-tree
--- Ctrl + K - показывает данные файла
---  Сфокусироваться на сайдбаре
-vim.api.nvim_set_keymap("n", "<C-y>", ":NvimTreeFocus<CR>", noremap)
-
---  Закрыть/Открыть сайдбар
-vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeToggle<CR>", noremap)
-
---  Эта функция делает как будто
---  то же самое, что и предыдущая,
---  закрывает/открывает сайдбар
-vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeFindFileToggle<CR>", noremap)
-
--- GoFmt
-vim.api.nvim_set_keymap("n", "<Space>g", ":w<CR>:GoFmt<CR>", noremap)
-
-
--- Сохраняет файл
-vim.api.nvim_set_keymap("n", "<C-s>", ":w!<CR>", noremap)
-
--- Сохраняет и проверяет файл в некоторых случая
-vim.api.nvim_set_keymap("n", "<leader>c", ":<cmd>write<cr>lua AfterSave()<CR>", noremap)
-
--- Закрывает текущую вкладку
--- vim.api.nvim_set_keymap("n", "<C-w>", ":bd!<CR><Cmd>BufferPrevious<CR>", noremap)
-
--- Сохраняет все и закрывает nvim
--- Проблема в том, что это не работает,
--- когда пользователь находится в сайдбаре
--- Пока не знаю, как это исправить
-vim.api.nvim_set_keymap("n", '<C-x>', ':wqa<CR>', noremap)
-
--- убрать выделение поиска
-vim.api.nvim_set_keymap("n", '<S-x>', ':noh<CR>', noremap)
-
---[[
--- Навигация для tmux
-vim.api.nvim_set_keymap('n',  'C-l', '<cmd>TmuxNavigateRight<CR>', {})
-vim.api.nvim_set_keymap('n',  'C-j', '<cmd>TmuxNavigateDown<CR>', {})
-vim.api.nvim_set_keymap('n',  'C-k', '<cmd>TmuxNavigateUp<CR>', {})
-]]--
-
-
-vim.keymap.set("n", "<C-p>", builtin.find_files, {})
-vim.keymap.set("n", "<Space><Space>", builtin.oldfiles, {})
-vim.keymap.set("n", "<Space>fg", builtin.live_grep, {})
-vim.keymap.set("n", "<Space>fh", builtin.help_tags, {})
-vim.keymap.set("n", "U", builtin.buffers, {})
-
-
--- BarBar
--- Это все должно быть удалено наверное
-vim.keymap.set("n", "<A-,>", "<Cmd>BufferPrevious<CR>", { noremap = true, silent = true})
-vim.keymap.set("n", "<A-.>", "<Cmd>BufferNext<CR>", { noremap = true, silent = true})
-
--- Re-order to previous/next
-vim.keymap.set("n", "<A-<>", "<Cmd>BufferMovePrevious<CR>", { noremap = true, silent = true})
-vim.keymap.set("n", "<A->>", "<Cmd>BufferMoveNext<CR>", { noremap = true, silent = true})
-
--- Goto buffer in position...
-vim.keymap.set("n", "<A-1>", "<Cmd>BufferGoto 1<CR>", { noremap = true, silent = true})
-vim.keymap.set("n", "<A-2>", "<Cmd>BufferGoto 2<CR>", { noremap = true, silent = true})
-vim.keymap.set("n", "<A-3>", "<Cmd>BufferGoto 3<CR>", { noremap = true, silent = true})
-vim.keymap.set("n", "<A-4>", "<Cmd>BufferGoto 4<CR>", { noremap = true, silent = true})
-vim.keymap.set("n", "<A-5>", "<Cmd>BufferGoto 5<CR>", { noremap = true, silent = true})
-vim.keymap.set("n", "<A-6>", "<Cmd>BufferGoto 6<CR>", { noremap = true, silent = true})
-vim.keymap.set("n", "<A-7>", "<Cmd>BufferGoto 7<CR>", { noremap = true, silent = true})
-vim.keymap.set("n", "<A-8>", "<Cmd>BufferGoto 8<CR>", { noremap = true, silent = true})
-vim.keymap.set("n", "<A-9>", "<Cmd>BufferGoto 9<CR>", { noremap = true, silent = true})
-vim.keymap.set("n", "<A-0>", "<Cmd>BufferLast<CR>", { noremap = true, silent = true})
-
--- Pin/unpin buffer
-vim.keymap.set("n", "<A-p>", "<Cmd>BufferPin<CR>", { noremap = true, silent = true})
-
--- Close buffer
-vim.keymap.set("n", "<A-c>", "<Cmd>BufferClose<CR>", { noremap = true, silent = true})
-
--- Wipeout buffer
--- :BufferWipeout
--- Close commands
---                 :BufferCloseAllButCurrent
---                 :BufferCloseAllButPinned
---                 :BufferCloseAllButCurrentOrPinned
---                 :BufferCloseBuffersLeft
---                 :BufferCloseBuffersRight
--- Magic buffer-picking mode
--- map("n", "<C-p>", "<Cmd>BufferPick<CR>", { noremap = true, silent = true})
-
--- Sort automatically by...
-vim.keymap.set("n", "<Space>bb", "<Cmd>BufferOrderByBufferNumber<CR>", { noremap = true, silent = true})
-vim.keymap.set("n", "<Space>bd", "<Cmd>BufferOrderByDirectory<CR>", { noremap = true, silent = true})
-vim.keymap.set("n", "<Space>bl", "<Cmd>BufferOrderByLanguage<CR>", { noremap = true, silent = true})
-vim.keymap.set("n", "<Space>bw", "<Cmd>BufferOrderByWindowNumber<CR>", { noremap = true, silent = true})
-
-
-vim.api.nvim_set_keymap("n", "<leader>ga", ":lua GitAdd()<CR>", noremap)
-vim.api.nvim_set_keymap("n", "<leader>gr", ":lua GitReset()<CR>", noremap)
-
-
--- delete current word and switch to insert mode
-vim.keymap.set("n", "yw", "viwdi")
-
--- delete word starting from cursor
-vim.api.nvim_set_keymap('i', '<C-H>', '<C-W>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<C-H>', '<C-W>', {noremap = true})
-vim.keymap.set("n", "<C-Del>", "ved")
-vim.keymap.set("i", "<C-Del>", "ved")
-
-
--- switch between splits
-vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
-vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
-vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
-vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
-
--- Open cmd line
-vim.api.nvim_set_keymap('n', 'zz', '<cmd>FineCmdline<CR>', {noremap = true})
-
--- Splits
-vim.api.nvim_set_keymap("n", "zv", ":vsplit<CR>", noremap_silent)
-vim.api.nvim_set_keymap("n", "zh", ":split<CR>", noremap_silent)
-vim.api.nvim_set_keymap("n", "zc", ":only<CR>", noremap_silent)
-
-vim.api.nvim_set_keymap("n", "zrh", ":vertical resize -1<CR>", noremap_silent)
-vim.api.nvim_set_keymap("n", "zrl", ":vertical resize +1<CR>", noremap_silent)
-vim.api.nvim_set_keymap("n", "zrk", ":resize +1<CR>", noremap_silent)
-vim.api.nvim_set_keymap("n", "zrj", ":resize -1<CR>", noremap_silent)
-
-
--- nvterm
-
 local toggle_modes = {'n', 't'}
+
+function close_terminals_and_quit()
+	local term = require("nvterm.terminal")
+
+	-- term.send("exit", "horizontal")
+	-- term.send("exit", "vertical")
+	-- term.send("exit", "float")
+	term.close_all_terms()
+
+	print(term.list_active_terms())
+
+	-- vim.api.nvim_command "wqa"
+	-- vim.cmd([[ :wqall ]])
+end
+
+local function run_file()
+	local term = require("nvterm.terminal")
+	term.show("horizontal")
+	-- term.send("python " .. vim.fn.expand("%"), "horizontal")
+end
+
 local mappings = {
-	{ toggle_modes, '<A-h>', function () terminal.toggle('horizontal') end },
-	{ toggle_modes, '<A-v>', function () terminal.toggle('vertical') end },
-	{ toggle_modes, '<A-i>', function () terminal.toggle('float') end },
+	-- Основные комбинации
+	-- Сохранить файл
+	{ "n", "<C-s>", "<CMD>w!<CR>", noremap },
+
+	-- Сохраняет и проверяет файл в некоторых случаях
+	-- FIXME: Тут идея была в том, чтобы написать функцию AfterSave
+	-- Которая бы применяла разные функции типа GoFmt для разных файлов,
+	-- но этого пока нет. Возможно для этого есть какой то готовый плагин
+	-- { "n", "<leader>c", ":w!<CR>lua AfterSave()<CR>", noremap },
+
+	-- Сохраняет все и закрывает nvim
+	-- Проблема в том, что это не работает,
+	-- когда пользователь находится в сайдбаре или если
+	-- открыт nvterm, пока не знаю, как это исправить
+	-- FIXME:
+	{ "n", "<C-x>", "<CMD>wqall<CR>", noremap },
+
+	-- убрать выделение поиска (команда :noh)
+	{ "n", "<S-x>", "<CMD>noh<CR>", noremap },
+
+	-- Удалить текущее слово
+	{ "n", "yw", "viwdi", noremap_silent},
+
+	-- Удалить слово начиная с положения курсора
+	{ "i", "<C-H>", "<C-W>", noremap },
+	{ "n", "<C-H>", "<C-W>", noremap },
+
+	{ "n", "<C-Del>", "ved", noremap },
+	{ "i", "<C-Del>", "ved", noremap },
+
+
+	-- Комбинации для TeleScope --
+	-- Поиск по файлам
+	{ "n", "<C-p>", builtin.find_files, noremap },
+
+	-- Поиск по старым файлам
+	{ "n", "<Space><Space>", builtin.oldfiles, noremap },
+
+	-- LiveGrep (FIXME: выяснить что это :) )
+	{ "n", "<Space>fg", builtin.live_grep, noremap },
+
+	-- HelpTags (Тоже пока не знаю что это)
+	{ "n", "<Space>fh", builtin.help_tags, noremap },
+
+	-- Текущие буферы
+	{ "n", "U", builtin.buffers, noremap },
+
+
+	-- Комбинации клавиш для nvim-tree --
+	-- Ctrl + K - показывает данные файла
+	--  Сфокусироваться на сайдбаре
+	{ "n", "<C-y>", "<CMD>NvimTreeFocus<CR>",  noremap },
+
+	--  Закрыть/Открыть сайдбар
+	{ "n", "<leader>e", "<CMD>NvimTreeToggle<CR>", noremap },
+
+	--  Эта функция делает как будто
+	--  то же самое, что и предыдущая,
+	--  закрывает/открывает сайдбар
+	{ "n", "<C-n>", "<CMD>NvimTreeFindFileToggle<CR>", noremap },
+
+
+	-- Комбинации клавиш для GoFmt --
+	-- Применить функцию GoFmt для текущего файла
+	{ "n", "<Space>g", "<CMD>w<CR><CMD>GoFmt<CR>", noremap },
+
+
+	-- BarBar --
+	-- Закрывает текущую вкладку
+	{ "n", "<C-w>", "<CMD>bd!<CR><CMD>BufferPrevious<CR>", noremap },
+
+	-- Предыдущая вкладка (буфер)
+	{ "n", "<A-,>", "<CMD>BufferPrevious<CR>", noremap_silent },
+
+	-- Следующая вкладка
+	{ "n", "<A-.>", "<CMD>BufferNext<CR>", noremap_silent },
+
+	-- Re-order to previous/next (что это значит)
+	{ "n", "<A-<>", "<CMD>BufferMovePrevious<CR>", noremap_silent },
+	{ "n", "<A->>", "<CMD>BufferMoveNext<CR>", noremap_silent },
+
+	-- Перейти в буфер по номеру
+	{ "n", "<A-1>", "<CMD>BufferGo 1<CR>", noremap_silent },
+	{ "n", "<A-2>", "<CMD>BufferGo 2<CR>", noremap_silent },
+	{ "n", "<A-3>", "<CMD>BufferGo 3<CR>", noremap_silent },
+	{ "n", "<A-4>", "<CMD>BufferGo 4<CR>", noremap_silent },
+	{ "n", "<A-5>", "<CMD>BufferGo 5<CR>", noremap_silent },
+	{ "n", "<A-6>", "<CMD>BufferGo 6<CR>", noremap_silent },
+	{ "n", "<A-7>", "<CMD>BufferGo 7<CR>", noremap_silent },
+	{ "n", "<A-8>", "<CMD>BufferGo 8<CR>", noremap_silent },
+	{ "n", "<A-9>", "<CMD>BufferGo 9<CR>", noremap_silent },
+	{ "n", "<A-0>", "<CMD>BufferGo 0<CR>", noremap_silent },
+
+	-- Pin/unpin buffer
+	{ "n", "<A-p>", "<CMD>BufferPin<CR>", noremap_silent },
+
+	-- Close buffer
+	{ "n", "<A-c>", "<CMD>BufferClose<CR>", noremap_silent },
+
+	-- Wipeout buffer
+	-- :BufferWipeout
+	-- Close commands
+	--                 :BufferCloseAllButCurrent
+	--                 :BufferCloseAllButPinned
+	--                 :BufferCloseAllButCurrentOrPinned
+	--                 :BufferCloseBuffersLeft
+	--                 :BufferCloseBuffersRight
+	-- Magic buffer-picking mode
+	-- { "n", "<C-p>", "<CMD>BufferPick<CR>", noremap_silent },
+
+	-- Сортировка вкладок
+	-- по номеру
+	{ "n", "<Space>bb", "<CMD>BufferOrderByBufferNumber<CR>", noremap_silent },
+
+	-- по директории
+	{ "n", "<Space>bd", "<CMD>BufferOrderByDirectory<CR>", noremap_silent },
+
+	-- по языку
+	{ "n", "<Space>bl", "<CMD>BufferOrderByLanguage<CR>", noremap_silent },
+
+	-- по номеру окна
+	{ "n", "<Space>bw", "<CMD>BufferOrderByWindowNumber<CR>", noremap_silent },
+
+
+	-- Git --
+	-- git add
+	{ "n", "<leader>ga", "GitAdd<CR>", noremap },
+
+	-- git reset
+	{ "n", "<leader>gr", "GitReset<CR>", noremap },
+
+
+	-- Splits --
+	{ "n", "zv", ":vsplit<CR>", noremap },
+	{ "n", "zh", ":split<CR>",  noremap },
+	{ "n", "zc", ":only<CR>",   noremap },
+
+	{ "n", "zrh", ":vertical resize -1<CR>", noremap },
+	{ "n", "zrl", ":vertical resize +1<CR>", noremap },
+	{ "n", "zrk", ":resize +1<CR>", noremap },
+	{ "n", "zrj", ":resize -1<CR>", noremap },
+
+	-- switch between splits
+	{ "n", "<c-k>", ":wincmd k<CR>", noremap },
+	{ "n", "<c-j>", ":wincmd j<CR>", noremap },
+	{ "n", "<c-h>", ":wincmd h<CR>", noremap },
+	{ "n", "<c-l>", ":wincmd l<CR>", noremap },
+
+
+	-- NvTerm --
+	{ { "n", "t" }, '<A-h>', function () terminal.toggle('horizontal') end, noremap_silent },
+	{ { "n", "t" }, '<A-v>', function () terminal.toggle('vertical') end,   noremap_silent },
+	{ { "n", "t" }, '<A-i>', function () terminal.toggle('float') end,      noremap_silent },
+
+	{ "n", "<F5>", '<cmd>lua require("nvterm.terminal").send("python " .. vim.fn.expand("%"), "horizontal")<CR>', noremap },
+	-- { "n", "<F5>", run_file, noremap },
+
+	--[[
+	-- Навигация для tmux
+	vim.api.nvim_set_keymap('n',  'C-l', '<cmd>TmuxNavigateRight<CR>', {})
+	vim.api.nvim_set_keymap('n',  'C-j', '<cmd>TmuxNavigateDown<CR>', {})
+	vim.api.nvim_set_keymap('n',  'C-k', '<cmd>TmuxNavigateUp<CR>', {})
+	]]--
+
+	-- Themery -- 
+	{ "n", "<Space>t", "<CMD>Themery<CR>", noremap },
+
+
+	-- Temp keymaps for mason lsp
+	-- { "n", "gd", vim.lsp.buf.definition, noremap}
 }
 
-local opts = { noremap = true, silent = true }
+
 for _, mapping in ipairs(mappings) do
-	vim.keymap.set(mapping[1], mapping[2], mapping[3], opts)
+	vim.keymap.set(mapping[1], mapping[2], mapping[3], mapping[4])
 end
+
+
+-- добавляет использование русской клавиатуры для комбинаций клавиш
+vim.cmd(":set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz")

@@ -1,8 +1,11 @@
+-- Плагин для вкладок. Я до сих пор не определился
+-- нужен ли он мне
+
 local M = {
 	'romgrk/barbar.nvim'
 }
 
-M.enabled = false
+M.enabled = true
 
 M.config = function()
 	require("barbar").setup {
@@ -14,4 +17,3 @@ M.config = function()
 end
 
 return M
-

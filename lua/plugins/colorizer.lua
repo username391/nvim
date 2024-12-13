@@ -1,3 +1,5 @@
+-- Плагин для подсветки значений цвета в коде
+
 local M = {
 	"norcalli/nvim-colorizer.lua"
 }
@@ -26,4 +28,3 @@ M.config = function()
 end
 
 return M
-
