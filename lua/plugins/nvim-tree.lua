@@ -41,7 +41,7 @@ M.config = function()
 
 	nvim_tree.setup {
 		disable_netrw = false,
-		auto_reload_on_write = false,
+		auto_reload_on_write = true,
 		diagnostics = {
 			enable = false,
 			icons = {
