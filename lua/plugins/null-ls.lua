@@ -17,7 +17,9 @@ M.config = function()
 				extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
 			},
 			formatting.gofumpt,
-			formatting.autopep8,
+			-- formatting.autopep8,
+			formatting.black,
+			-- formatting.pyink,
 			formatting.stylua,
 			formatting.clang_format.with {
 				filetypes = { "cpp", "c" },
