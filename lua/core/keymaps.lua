@@ -201,11 +201,11 @@ local mappings = {
 
 
 	-- Keymaps for tmux navigation
-	{ { "n", "t", "i" }, "<c-h>", "<cmd>TmuxNavigateLeft<cr>", noremap},
-	{ { "n", "t", "i" }, "<c-j>", "<cmd>TmuxNavigateDown<cr>", noremap},
-	{ { "n", "t", "i" }, "<c-k>", "<cmd>TmuxNavigateUp<cr>", noremap},
-	{ { "n", "t", "i" }, "<c-l>", "<cmd>TmuxNavigateRight<cr>", noremap},
-	{ { "n", "t", "i" }, "<c-\\>", "<cmd>TmuxNavigatePrevious<cr>", noremap},
+	{ { "n", "t" }, "<c-h>", "<cmd>TmuxNavigateLeft<cr>", noremap},
+	{ { "n", "t" }, "<c-j>", "<cmd>TmuxNavigateDown<cr>", noremap},
+	{ { "n", "t" }, "<c-k>", "<cmd>TmuxNavigateUp<cr>", noremap},
+	{ { "n", "t" }, "<c-l>", "<cmd>TmuxNavigateRight<cr>", noremap},
+	{ { "n", "t" }, "<c-\\>", "<cmd>TmuxNavigatePrevious<cr>", noremap},
 }
 
 
