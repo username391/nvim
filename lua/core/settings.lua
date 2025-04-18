@@ -29,3 +29,8 @@ vim.o.termguicolors   = true
 
 vim.cmd("set clipboard+=unnamedplus")
 
+vim.filetype.add({
+  extension = {
+    script = "lua",
+  },
+})
