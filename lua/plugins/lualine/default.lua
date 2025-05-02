@@ -96,7 +96,7 @@ M.lsp = {
     function()
         local clients = {}
 
-        for _, client in pairs(vim.lsp.buf_get_clients()) do
+        for _, client in pairs(vim.lsp.get_clients()) do
             if client.name ~= "null-ls" then
                 table.insert(clients, client.name)
             end
