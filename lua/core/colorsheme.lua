@@ -1,7 +1,9 @@
 -- Themery block
 -- This block will be replaced by Themery.
-vim.cmd("colorscheme catppuccin-macchiato")
-vim.g.theme_id = 3
+
+-- I probably do not need this anymore
+-- vim.cmd("colorscheme catppuccin-macchiato")
+-- vim.g.theme_id = 3
 -- end themery block
 
 -- alternate method for transparency
