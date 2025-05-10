@@ -49,3 +49,9 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = function()
 end
 })
 
+vim.api.nvim_create_autocmd("BufReadPre", {
+  pattern = { "*.bat", "*.cmd", "*.lnk" },
+  callback = function()
+    vim.opt.fileencoding = "cp1251"
+  end,
+})

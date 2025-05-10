@@ -10,6 +10,7 @@ local plugins = {
 				"pyright",
 				"gopls",
 				"vimls",
+				"bash-language-server",
 
 				-- "clangd",
 				-- "intelephense",
@@ -19,7 +20,7 @@ local plugins = {
 				-- "yamlls",
 				-- "lemminx",
 				-- "cmake",
-				-- "powershell_es",
+				"powershell_es",
 			}
 		}
 	},

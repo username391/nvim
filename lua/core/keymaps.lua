@@ -216,3 +216,6 @@ end
 
 -- добавляет использование русской клавиатуры для комбинаций клавиш
 vim.cmd(":set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz")
+
+vim.api.nvim_set_keymap('n', ']c', '<cmd>Gitsigns next_hunk<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '[c', '<cmd>Gitsigns prev_hunk<CR>', { noremap = true, silent = true })
