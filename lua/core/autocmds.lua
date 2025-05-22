@@ -55,3 +55,11 @@ vim.api.nvim_create_autocmd("BufReadPre", {
     vim.opt.fileencoding = "cp1251"
   end,
 })
+
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "snacks-explorer",
+  callback = function()
+    vim.keymap.set("n", "<C-n>", "<Nop>", { buffer = true })
+  end,
+})
