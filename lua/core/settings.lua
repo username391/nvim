@@ -28,6 +28,7 @@ vim.o.termguicolors   = true
 -- TransparentBackground = true
 
 vim.cmd("set clipboard+=unnamedplus")
+vim.g.mapleader = '<Space>'
 
 vim.filetype.add({
   extension = {
