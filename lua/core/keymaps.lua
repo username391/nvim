@@ -226,8 +226,8 @@ local mappings = {
 	-- Snacks
 	-- 	Замена NvimTree
 	-- 	File explorer
-	{ { "n", "t" }, "<Space>e",       function() snacks.explorer() end,  noremap },
-	{ { "n", "t" }, "<C-n>",           function() snacks.explorer() end,  noremap },
+	{ { "n" }, "<Space>e",       function() snacks.explorer() end,  noremap },
+	{ { "n" }, "<C-n>",           function() snacks.explorer() end,  noremap },
 
 	-- 	Smart Find Files - по сути fzf, просто поиск файлов
 	{ { "n" }, "<Space><Space>", function() spick.smart() end,    noremap },
