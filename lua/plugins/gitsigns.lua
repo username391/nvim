@@ -2,6 +2,7 @@
 local M = {
 	"lewis6991/gitsigns.nvim"
 }
+M.enabled = true
 M.event = { "BufReadPost", "BufNewFile" }
 
 M.config = function()
