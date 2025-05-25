@@ -21,6 +21,7 @@ npm i -g pyright
 ```shell
 pacman -S ripgrep lazygit
 ```
+
 #### Настройка темы
 Комбинация клавиш `Space + t` открывает меню для выбора темы
 
