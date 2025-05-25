@@ -28,6 +28,8 @@ function Close_terminals_and_quit()
 	-- vim.cmd([[ :wqall ]])
 end
 
+-- TODO: Эту функцию нужно переименовать, перенести в другой файл
+-- и переписать нормально. Сейчас она не используется
 local function run_file()
 	local term = require("nvterm.terminal")
 	term.show("horizontal")
