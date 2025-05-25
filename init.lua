@@ -1,7 +1,7 @@
-require("plugin-loader")
-
 require("core.additional")
 require("core.settings")
-require("core.autocmds")
+
+require("plugin-loader")
 require("core.keymaps")
+require("core.autocmds")
 
