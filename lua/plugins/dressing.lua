@@ -3,7 +3,7 @@ local M = {
 	"stevearc/dressing.nvim"
 }
 
-M.enabled = true
+M.enabled = false
 M.config = function()
 	require("dressing").setup {
 		input = {
