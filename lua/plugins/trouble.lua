@@ -8,14 +8,14 @@ M.cmd = "Trouble"
 
 M.keys = {
 	{
-		"<leader>xx",
+	"<leader>xx",
 		"<cmd>Trouble diagnostics toggle<cr>",
 		desc = "Diagnostics (Trouble)",
 	},
 	{
 		"<leader>xX",
 		"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-		desc = "Buffer Diagnostics (Trouble)",
+	esc = "Buffer Diagnostics (Trouble)",
 	},
 	{
 		"<leader>cs",
