@@ -12,7 +12,11 @@ local noremap_silent = { noremap = true, silent = true }
 
 local toggle_modes = { 'n', 't' }
 
-function close_terminals_and_quit()
+-- FIXME: эта функция задумывалась как функция, которая будет
+-- выполняться при закрытии программы. Она должна перед закрытием закрыть все
+-- терминалы. Очеведно она не работает, нужно будет либо переписать,
+-- либо удалить
+function Close_terminals_and_quit()
 	local term = require("nvterm.terminal")
 
 	-- term.send("exit", "horizontal")
