@@ -230,139 +230,139 @@ local mappings = {
 	{ { "n", "t" }, "<C-n>",           function() snacks.explorer() end,  noremap },
 
 	-- 	Smart Find Files - по сути fzf, просто поиск файлов
-	{ { "n", "t" }, "<Space><Space>", function() spick.smart() end,    noremap },
+	{ { "n" }, "<Space><Space>", function() spick.smart() end,    noremap },
 	-- 	Grep
 	-- 	TODO: Это по сути тот же livegrep, то есть можно удалить предыдущий
-	{ { "n", "t" }, "<Space>/",       function() spick.grep() end,     noremap },
+	{ { "n" }, "<Space>/",       function() spick.grep() end,     noremap },
 	-- 	Visual selection or word - можно навести на слово и начать искать его
-	{ { "n", "t", "x" }, "<Space>sw", function() spick.grep_word() end, noremap },
+	{ { "n", "x" }, "<Space>sw", function() spick.grep_word() end, noremap },
 	-- 	Buffers
-	{ { "n", "t" }, "<Space>,",       function() spick.buffers() end,  noremap },
+	{ { "n" }, "<Space>,",       function() spick.buffers() end,  noremap },
 	-- 	Command history
-	{ { "n", "t" }, "<Space>:",       function() spick.command_history() end,  noremap },
+	{ { "n" }, "<Space>:",       function() spick.command_history() end,  noremap },
 	-- 	Notification history
-	{ { "n", "t" }, "<Space>n",       function() spick.notifications() end,  noremap },
+	{ { "n" }, "<Space>n",       function() spick.notifications() end,  noremap },
 
 	-- 	Find files | Разница между этим и следующим по всей видимости
 	-- 	в том, что этот показывает все файлы, а следующий только те
 	-- 	которые есть в git
-	{ { "n", "t" }, "<Space>ff",       function() spick.files() end,  noremap },
+	{ { "n" }, "<Space>ff",       function() spick.files() end,  noremap },
 	-- 	Find git files
-	{ { "n", "t" }, "<Space>fg",       function() spick.git_files() end,  noremap },
+	{ { "n" }, "<Space>fg",       function() spick.git_files() end,  noremap },
 
 	-- 	Recent | Показывает последние файлы, в том числе в других
 	-- 	директориях
-	{ { "n", "t" }, "<Space>fr",       function() spick.recent() end,  noremap },
+	{ { "n" }, "<Space>fr",       function() spick.recent() end,  noremap },
 
 	-- Дальше идут гит функции
 	--	 Git Branches
-	{ { "n", "t" }, "<Space>gb", function() spick.git_branches() end, noremap },
+	{ { "n" }, "<Space>gb", function() spick.git_branches() end, noremap },
 	--	 Git Log
-	{ { "n", "t" }, "<Space>gl", function() spick.git_log() end, noremap },
+	{ { "n" }, "<Space>gl", function() spick.git_log() end, noremap },
 	-- 	Git Log Line
-	{ { "n", "t" }, "<Space>gL", function() spick.git_log_line() end, noremap },
+	{ { "n" }, "<Space>gL", function() spick.git_log_line() end, noremap },
 	-- 	Git Status
-	{ { "n", "t" }, "<Space>gs", function() spick.git_status() end, noremap },
+	{ { "n" }, "<Space>gs", function() spick.git_status() end, noremap },
 	-- 	Git Stash - это я не знаю что такое
-	{ { "n", "t" }, "<Space>gS", function() spick.git_stash() end, noremap },
+	{ { "n" }, "<Space>gS", function() spick.git_stash() end, noremap },
 	-- 	Git Diff (Hunks)
-	{ { "n", "t" }, "<Space>gd", function() spick.git_diff() end, noremap },
+	{ { "n" }, "<Space>gd", function() spick.git_diff() end, noremap },
 	-- 	Git Log File
-	{ { "n", "t" }, "<Space>gf", function() spick.git_log_file() end, noremap },
+	{ { "n" }, "<Space>gf", function() spick.git_log_file() end, noremap },
 
 	-- Buffer Lines - это я вообще не понимаю
-	{ { "n", "t" }, "<Space>sb", function() spick.lines() end, noremap },
+	{ { "n" }, "<Space>sb", function() spick.lines() end, noremap },
 	-- Grep Open Buffers
-	{ { "n", "t" }, "<Space>sB", function() spick.grep_buffers() end, noremap },
+	{ { "n" }, "<Space>sB", function() spick.grep_buffers() end, noremap },
 
 	-- Grep - это опять дубль
-	-- { { "n", "t" }, "<Space>sg", function() spick.grep() end, noremap },
+	-- { { "n" }, "<Space>sg", function() spick.grep() end, noremap },
 
 	-- search
 	-- 	Registers - показывает историю буфера обмена
-	{ { "n", "t" }, '<Space>s"', function() spick.registers() end, noremap },
+	{ { "n" }, '<Space>s"', function() spick.registers() end, noremap },
 	-- 	Search History - история поисков
-	{ { "n", "t" }, '<Space>s/', function() spick.search_history() end, noremap },
+	{ { "n" }, '<Space>s/', function() spick.search_history() end, noremap },
 	-- Command History - история команд
-	{ { "n", "t" }, "<Space>sc", function() spick.command_history() end, noremap },
+	{ { "n" }, "<Space>sc", function() spick.command_history() end, noremap },
 	-- Commands - показывает список всех доступных команд
-	{ { "n", "t" }, "<Space>sC", function() spick.commands() end, noremap },
+	{ { "n" }, "<Space>sC", function() spick.commands() end, noremap },
 	-- Diagnostics - вот это супер важно, можно смотреть всю диагностику по
 	-- открытым буферам
-	{ { "n", "t" }, "<Space>sd", function() spick.diagnostics() end, noremap },
+	{ { "n" }, "<Space>sd", function() spick.diagnostics() end, noremap },
 	-- Buffer Diagnostics - это возможно более важно - диагностика по одному 
 	-- буферу
-	{ { "n", "t" }, "<Space>sD", function() spick.diagnostics_buffer() end, noremap },
+	{ { "n" }, "<Space>sD", function() spick.diagnostics_buffer() end, noremap },
 
 	-- Icons - позволяет вставить доступные иконки/эмоджи
-	{ { "n", "t" }, "<Space>si", function() spick.icons() end, noremap },
+	{ { "n" }, "<Space>si", function() spick.icons() end, noremap },
 	-- Jumps - куда можно прыгнуть, видимо места, где я редактировал что-то
-	{ { "n", "t" }, "<Space>sj", function() spick.jumps() end, noremap },
+	{ { "n" }, "<Space>sj", function() spick.jumps() end, noremap },
 	-- Keymaps - список всех мап
-	{ { "n", "t" }, "<Space>sk", function() spick.keymaps() end, noremap },
+	{ { "n" }, "<Space>sk", function() spick.keymaps() end, noremap },
 	-- Marks - судя по всему должен показывать закладки
-	{ { "n", "t" }, "<Space>sm", function() spick.marks() end, noremap },
+	{ { "n" }, "<Space>sm", function() spick.marks() end, noremap },
 	-- Man Pages - показывает документацию на различные программы и утилиты
-	{ { "n", "t" }, "<Space>sM", function() spick.man() end, noremap },
+	{ { "n" }, "<Space>sM", function() spick.man() end, noremap },
 
 	-- Resume - OPTIM: ПРодолжи отсюда!
-	{ { "n", "t" }, "<Space>sR", function() spick.resume() end, noremap },
+	{ { "n" }, "<Space>sR", function() spick.resume() end, noremap },
 	-- Undo History
-	{ { "n", "t" }, "<Space>su", function() spick.undo() end, noremap },
+	{ { "n" }, "<Space>su", function() spick.undo() end, noremap },
 	-- Colorschemes
-	{ { "n", "t" }, "<Space>uC", function() spick.colorschemes() end, noremap },
+	{ { "n" }, "<Space>uC", function() spick.colorschemes() end, noremap },
 	-- LSP
 	-- Goto Definition
-	{ { "n", "t" }, "gd", function() spick.lsp_definitions() end, noremap },
+	{ { "n" }, "gd", function() spick.lsp_definitions() end, noremap },
 	-- Goto Declaration
-	{ { "n", "t" }, "gD", function() spick.lsp_declarations() end, noremap },
+	{ { "n" }, "gD", function() spick.lsp_declarations() end, noremap },
 	-- 	References
 	-- nowait = true <-- тут еще должно было быть вот это FIXME: 
-	{ { "n", "t" }, "gr", function() spick.lsp_references() end, noremap },
+	{ { "n" }, "gr", function() spick.lsp_references() end, noremap },
 	-- Goto Implementation
-	{ { "n", "t" }, "gI", function() spick.lsp_implementations() end, noremap },
+	{ { "n" }, "gI", function() spick.lsp_implementations() end, noremap },
 	-- Goto T[y]pe Definition
-	{ { "n", "t" }, "gy", function() spick.lsp_type_definitions() end, noremap },
+	{ { "n" }, "gy", function() spick.lsp_type_definitions() end, noremap },
 	-- LSP Symbols
-	{ { "n", "t" }, "<Space>ss", function() spick.lsp_symbols() end, noremap },
+	{ { "n" }, "<Space>ss", function() spick.lsp_symbols() end, noremap },
 	-- LSP Workspace Symbols
-	{ { "n", "t" }, "<Space>sS", function() spick.lsp_workspace_symbols() end, noremap },
+	{ { "n" }, "<Space>sS", function() spick.lsp_workspace_symbols() end, noremap },
 	-- Other
 	-- Toggle Zen Mode
-	{ { "n", "t" }, "<Space>z", function() snacks.zen() end, noremap },
+	{ { "n" }, "<Space>z", function() snacks.zen() end, noremap },
 	-- Toggle Zoom
-	{ { "n", "t" }, "<Space>Z", function() snacks.zen.zoom() end, noremap },
+	{ { "n" }, "<Space>Z", function() snacks.zen.zoom() end, noremap },
 	-- Toggle Scratch Buffer
-	{ { "n", "t" }, "<Space>.", function() snacks.scratch() end, noremap },
+	{ { "n" }, "<Space>.", function() snacks.scratch() end, noremap },
 	-- Select Scratch Buffer
-	{ { "n", "t" }, "<Space>S", function() snacks.scratch.select() end, noremap },
+	{ { "n" }, "<Space>S", function() snacks.scratch.select() end, noremap },
 	-- Notification History
-	{ { "n", "t" }, "<Space>n", function() snacks.notifier.show_history() end, noremap },
+	{ { "n" }, "<Space>n", function() snacks.notifier.show_history() end, noremap },
 	-- Delete Buffer
-	{ { "n", "t" }, "<Space>bd", function() snacks.bufdelete() end, noremap },
+	{ { "n" }, "<Space>bd", function() snacks.bufdelete() end, noremap },
 	-- Rename File
-	{ { "n", "t" }, "<Space>cR", function() snacks.rename.rename_file() end, noremap },
+	{ { "n" }, "<Space>cR", function() snacks.rename.rename_file() end, noremap },
 	-- 		Git Browser
 	{ { "n", "v" }, "<Space>gB", function() snacks.gitbrowse() end, noremap },
 	-- Lazygit
-	{ { "n", "t" }, "<Space>gg", function() snacks.lazygit() end, noremap },
+	{ { "n" }, "<Space>gg", function() snacks.lazygit() end, noremap },
 	-- Dismiss All Notifications
-	{ { "n", "t" }, "<Space>un", function() snacks.notifier.hide() end, noremap },
+	{ { "n" }, "<Space>un", function() snacks.notifier.hide() end, noremap },
 	-- Toggle Terminal
-	{ { "n", "t" }, "<c-/>", function() snacks.terminal() end, noremap },
+	{ { "n" }, "<c-/>", function() snacks.terminal() end, noremap },
 	-- which_key_ignore
-	{ { "n", "t" }, "<c-_>", function() snacks.terminal() end, noremap },
+	{ { "n" }, "<c-_>", function() snacks.terminal() end, noremap },
 
 	-- 	Next Reference
-	{ {"n", "t" }, "]]", function() snacks.words.jump(vim.v.count1) end, noremap },
+	{ {"n" }, "]]", function() snacks.words.jump(vim.v.count1) end, noremap },
 	-- 	Prev Reference
-	{ { "n", "t" }, "[[", function() snacks.words.jump(-vim.v.count1) end, noremap },
+	{ { "n" }, "[[", function() snacks.words.jump(-vim.v.count1) end, noremap },
 
 
 	-- USELESS
 	-- 	Find config file ? показывает все файлы, в папках с названием config
 	-- 	в целом бесполезная для меня ерунда
-	{ { "n", "t" }, "<Space>fc",       function() spick.files(
+	{ { "n" }, "<Space>fc",       function() spick.files(
 		{ cwd = vim.fn.stdpath("config") }
 	) end,  noremap },
 
@@ -370,28 +370,28 @@ local mappings = {
 	-- 	Пример, у меня есть репозиторий nvim, это git проект, он находится в папке .config
 	-- 	и это отдельный git проект. Вот между ними переключается эта функция.
 	-- 	В целом для меня она бесполезна, но я ее здесь оставлю
-	{ { "n", "t" }, "<Space>fp",       function() spick.projects() end,  noremap },
+	{ { "n" }, "<Space>fp",       function() spick.projects() end,  noremap },
 
 
 	-- Autocmds - показывает список моих autocmd, также бесполезно
-	{ { "n", "t" }, "<Space>sa", function() spick.autocmds() end, noremap },
+	{ { "n" }, "<Space>sa", function() spick.autocmds() end, noremap },
 
 	-- Help Pages - показывает документацию, видимо по плагинам и по виму
 	-- Особо не нужно, но пусть тут будет
-	{ { "n", "t" }, "<Space>sh", function() spick.help() end, noremap },
+	{ { "n" }, "<Space>sh", function() spick.help() end, noremap },
 
 
 	-- Highlights - что то показывает, не знаю, не нужно
-	{ { "n", "t" }, "<Space>sH", function() spick.highlights() end, noremap },
+	{ { "n" }, "<Space>sH", function() spick.highlights() end, noremap },
 
 	-- Location List - тоже не знаю, значит не нужно 
-	{ { "n", "t" }, "<Space>sl", function() spick.loclist() end, noremap },
+	{ { "n" }, "<Space>sl", function() spick.loclist() end, noremap },
 
 	-- Search for Plugin Spec - не знаю что это
-	{ { "n", "t" }, "<Space>sp", function() spick.lazy() end, noremap },
+	{ { "n" }, "<Space>sp", function() spick.lazy() end, noremap },
 
 	-- Quickfix List - тоже непонятно, может какие то исправления?
-	{ { "n", "t" }, "<Space>sq", function() spick.qflist() end, noremap },
+	{ { "n" }, "<Space>sq", function() spick.qflist() end, noremap },
 
 }
 
