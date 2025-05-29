@@ -74,7 +74,7 @@ local mappings = {
 
 	-- Комбинации для TeleScope --
 	-- Поиск по файлам
-	{ "n", "<C-p>", builtin.find_files, noremap },
+	-- { "n", "<C-p>", builtin.find_files, noremap },
 
 	-- Поиск по старым файлам
 	-- { "n", "<Space><Space>", builtin.oldfiles, noremap },
