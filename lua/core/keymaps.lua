@@ -353,9 +353,10 @@ local mappings = {
 	-- Dismiss All Notifications
 	{ { "n" }, "<Space>un", function() snacks.notifier.hide() end, noremap },
 	-- Toggle Terminal
-	{ { "n" }, "<c-/>", function() snacks.terminal() end, noremap },
+	-- TODO: Переназначь эту команду
+	-- { { "n" }, "<c-/>", function() snacks.terminal() end, noremap },
 	-- which_key_ignore
-	{ { "n" }, "<c-_>", function() snacks.terminal() end, noremap },
+	-- { { "n" }, "<c-_>", function() snacks.terminal() end, noremap },
 
 	-- 	Next Reference
 	{ {"n" }, "]]", function() snacks.words.jump(vim.v.count1) end, noremap },
