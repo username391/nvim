@@ -79,7 +79,7 @@ local mappings = {
 	-- Поиск по старым файлам
 	-- { "n", "<Space><Space>", builtin.oldfiles, noremap },
 
-	-- LiveGrep (FIXME: выяснить что это :) )
+	-- LiveGrep
 	{ "n", "<Space>fg", builtin.live_grep, noremap },
 
 	-- HelpTags (Тоже пока не знаю что это)
