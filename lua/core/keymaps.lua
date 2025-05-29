@@ -234,6 +234,8 @@ local mappings = {
 	-- 	Grep
 	-- 	TODO: Это по сути тот же livegrep, то есть можно удалить предыдущий
 	{ { "n" }, "<Space>/",       function() spick.grep() end,     noremap },
+	-- Дубль под альтернативную команду
+	{ { "n" }, "<C-g>",          function() spick.grep() end,     noremap },
 	-- 	Visual selection or word - можно навести на слово и начать искать его
 	{ { "n", "x" }, "<Space>sw", function() spick.grep_word() end, noremap },
 	-- 	Buffers
@@ -247,6 +249,8 @@ local mappings = {
 	-- 	в том, что этот показывает все файлы, а следующий только те
 	-- 	которые есть в git
 	{ { "n" }, "<Space>ff",       function() spick.files() end,  noremap },
+	-- Это дубль предыдущей команды под прошлый бинд
+	{ { "n" }, "<C-p>",       function() spick.files() end,  noremap },
 	-- 	Find git files
 	{ { "n" }, "<Space>fg",       function() spick.git_files() end,  noremap },
 
