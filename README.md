@@ -12,6 +12,12 @@ npm i -g pyright
 :MasonUpdate
 ```
 
+Если не удается установить ruff возможно проблема в python3-venv
+(у меня возникало только на ubuntu)
+```
+sudo apt install python3-venv
+```
+
 Для отображения документации нужно установить еще вот это
 ```vim
 :TSInstall markdown markdown_inline
