@@ -42,10 +42,10 @@ M.opts = {
 			explorer = {
 				layout = { layout = {position = "right"} },
 				follow_file = true,
-				tree = false,
+				tree = true,
 				focus = "list",
 				jump = { close = false },
-				auto_close = false,
+				auto_close = true,
 				win = {
 					list = {
 						keys = {
