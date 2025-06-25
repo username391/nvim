@@ -35,3 +35,6 @@ vim.filetype.add({
     script = "lua",
   },
 })
+
+
+vim.opt.cmdheight = 0
