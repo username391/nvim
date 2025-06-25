@@ -1,32 +1,34 @@
 local M = {
 	-- "jose-elias-alvarez/null-ls.nvim"
-	"nvimtools/none-ls.nvim"
+	"nvimtools/none-ls.nvim",
 }
 M.event = { "BufReadPost", "BufNewFile" }
 M.config = function()
-	local null_ls = require "null-ls"
+	local null_ls = require("null-ls")
 
 	local formatting = null_ls.builtins.formatting
 	-- local diagnostics = null_ls.builtins.diagnostics
 
-	null_ls.setup {
+	null_ls.setup({
 		debug = false,
 		sources = {
-			formatting.prettier.with {
+			formatting.prettier.with({
 				extra_filetypes = { "toml", "solidity" },
 				extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
-			},
-			formatting.gofumpt,
+			}),
+			formatting.gofmt,
+			formatting.djlint,
 			-- formatting.autopep8,
-			formatting.black,
+			-- formatting.ruff,
 			-- formatting.pyink,
 			formatting.stylua,
-			formatting.clang_format.with {
+			-- formatting.beautysh,
+			formatting.shfmt,
+			formatting.clang_format.with({
 				filetypes = { "cpp", "c" },
-			},
+			}),
 		},
-	}
+	})
 end
 
 return M
-
