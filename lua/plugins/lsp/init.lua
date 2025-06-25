@@ -11,6 +11,11 @@ local plugins = {
 				"gopls",
 				"vimls",
 				"bash-language-server",
+				"ts_ls",
+				"ruff",
+				"luaformatter",
+				"beautysh",
+				"djlint",
 
 				-- "clangd",
 				-- "intelephense",
@@ -21,25 +26,26 @@ local plugins = {
 				-- "lemminx",
 				-- "cmake",
 				"powershell_es",
-			}
-		}
+			},
+		},
 	},
 	{
 		"neovim/nvim-lspconfig",
-		config = function ()
+		config = function()
 			require("plugins.lsp.handlers")
 
-			require("lspconfig").lua_ls.setup {
+			require("lspconfig").lua_ls.setup({
 				settings = {
 					Lua = {
 						workspace = { checkThirdParty = false },
-						diagnostics = { globals = { "vim" } }
-					}
-				}
-			}
-		end
+						diagnostics = { globals = { "vim" } },
+					},
+				},
+			})
 
-	}
+			require("lspconfig").ts_ls.setup({})
+		end,
+	},
 }
 
 return plugins
