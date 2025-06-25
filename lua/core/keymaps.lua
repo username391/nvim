@@ -215,6 +215,7 @@ local mappings = {
 	-- Temp keymaps for mason lsp
 	-- go to definition
 	{ "n", "gd", vim.lsp.buf.definition, noremap},
+	{ "n", "fmt", vim.lsp.buf.format, noremap},
 
 	-- Keymaps for tmux navigation
 	{ { "n", "t" }, "<c-h>", "<cmd>TmuxNavigateLeft<cr>", noremap},
