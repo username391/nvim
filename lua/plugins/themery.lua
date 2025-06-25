@@ -33,28 +33,13 @@ M.config = function()
 				before = [[ vim.opt.background = "dark" ]]
 			},
 			{
-				name = "Rose Pine (light)",
-				colorscheme = "rose-pine",
-				before = [[ vim.opt.background = "light" ]]
-			},
-			{
-				name = "Tokyo Night",
-				colorscheme = "tokyonight-night",
+				name = "Rose Pine Moon",
+				colorscheme = "rose-pine-moon",
 				before = [[ vim.opt.background = "dark" ]]
 			},
 			{
-				name = "Tokyo Storm",
-				colorscheme = "tokyonight-storm",
-				before = [[ vim.opt.background = "dark" ]]
-			},
-			{
-				name = "Tokyo Moon",
-				colorscheme = "tokyonight-moon",
-				before = [[ vim.opt.background = "dark" ]]
-			},
-			{
-				name = "Tokyo Day",
-				colorscheme = "tokyonight-day",
+				name = "Rose Pine Dawn",
+				colorscheme = "rose-pine-dawn",
 				before = [[ vim.opt.background = "light" ]]
 			},
 		},
