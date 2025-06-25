@@ -28,7 +28,10 @@ M.config = function()
 			filetypes = { "cpp", "c" },
 		}),
 		-- Linting
-		diagnostics.shellcheck,
+		-- diagnostics.shellcheck.with({
+		-- 	filetypes = { "sh", "bash", "zsh" },
+		-- 	only_local = "node_modules/.bin",
+		-- }),
 	},
 	})
 end
