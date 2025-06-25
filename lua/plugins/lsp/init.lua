@@ -1,49 +1,63 @@
 local plugins = {
 	{
 		"williamboman/mason.nvim",
+		dependencies = {
+			"williamboman/mason-lspconfig.nvim",
+		},
 		opts = {
 			ensure_installed = {
-				"jsonls",
+				-- LSP servers
 				"lua_ls",
+				"pyright",
+				"ruff",
+				"gopls",
+				"bashls",
+				"ts_ls",
+				"jsonls",
 				"cssls",
 				"html",
-				"pyright",
-				"gopls",
 				"vimls",
-				"bash-language-server",
-				"ts_ls",
-				"ruff",
-				"luaformatter",
-				"beautysh",
+				"powershell_es",
+				-- Formatters
+				"stylua",
+				"shfmt",
+				"prettier",
 				"djlint",
+				-- Linters
+				"shellcheck",
 
 				-- "clangd",
 				-- "intelephense",
-				-- "tsserver",
 				-- "emmet_ls",
 				-- "omnisharp",
 				-- "yamlls",
 				-- "lemminx",
 				-- "cmake",
-				"powershell_es",
 			},
+		},
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		opts = {
+			ensure_installed = {
+				"lua_ls",
+				"pyright",
+				"ruff",
+				"gopls",
+				"bashls",
+				"ts_ls",
+				"jsonls",
+				"cssls",
+				"html",
+			},
+			automatic_installation = true,
 		},
 	},
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
+			-- Load all LSP configurations from handlers
 			require("plugins.lsp.handlers")
-
-			require("lspconfig").lua_ls.setup({
-				settings = {
-					Lua = {
-						workspace = { checkThirdParty = false },
-						diagnostics = { globals = { "vim" } },
-					},
-				},
-			})
-
-			require("lspconfig").ts_ls.setup({})
 		end,
 	},
 }
