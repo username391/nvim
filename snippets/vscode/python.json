@@ -2,116 +2,120 @@
     "ifmain": {
         "prefix": "ifmain",
         "body": [
+            "def main():",
+            "    pass",
+            "",
+            "",
             "if __name__ == '__main__':",
-			"    try:",
+            "    try:",
             "        main()",
-			"    except Exception:",
-			"        logger.error(traceback.format_exc())"
+            "    except Exception:",
+            "        logger.error(traceback.format_exc())"
         ],
         "description": "If main block"
     },
-	"withopen": {
-		"prefix": "withopen",
-		"body": [
-			"with open('$1', '${2:r}', encoding='utf-8') as f:",
-			"    ${3:...}"
-		],
-		"description": "open file for"
-	},
-	"do_request_function": {
-		"prefix": "f__dorequest",
-		"body": [
-			"def do_request(method: str, url: str, **kwargs) -> requests.Response:",
-			"    if 'headers' in kwargs:",
-			"        headers = kwargs.pop('headers')",
-			"    else:",
-			"        headers = {}",
-			"    headers['User-Agent'] = USER_AGENT",
-			"",
-			"    try:",
-			"        if 'timeout' not in kwargs:",
-			"            kwargs['timeout'] = 30",
-			"        response = requests.request(method, url, headers=headers, **kwargs)",
-			"        logger.info(f'[{response.status_code}] {url}')",
-			"        return response",
-			"    except (",
-			"        requests.exceptions.ConnectTimeout,",
-			"        requests.exceptions.ConnectionError,",
-			"        requests.exceptions.ProxyError,",
-			"        requests.exceptions.ReadTimeout,",
-			"        urllib3.exceptions.ReadTimeoutError,",
-			"        requests.exceptions.ChunkedEncodingError",
-			"    ) as e:",
-			"        logger.error(f'{url} {e.with_traceback(None)}')",
-			"        time.sleep(1)",
-			"        return do_request(method, url, headers=headers, **kwargs)"
-		],
-		"description": "do_request function with logger and user agent"
-	},
-	"session_class": {
-		"prefix": "c__session_class",
-		"body": [
-			"class HttpSession(requests.Session):",
-			"    def __init__(self):",
-			"        super().__init__()",
-			"        self.headers['User-Agent'] = USER_AGENT",
-			"",
-			"    def do_request(self, method: str, url: str, **kwargs) -> requests.Response:",
-			"        try:",
-			"            if 'timeout' not in kwargs:",
-			"                kwargs['timeout'] = 30",
-			"            response = self.request(method, url, **kwargs)",
-			"            logger.info(f'[{response.status_code}] {url}')",
-			"            return response",
-			"        except (",
-			"            requests.exceptions.ConnectTimeout,",
-			"            requests.exceptions.ConnectionError,",
-			"            requests.exceptions.ProxyError,",
-			"            requests.exceptions.ReadTimeout,",
-			"            urllib3.exceptions.ReadTimeoutError,",
-			"            requests.exceptions.ChunkedEncodingError",
-			"        ) as e:",
-			"            logger.error(f'{url} {e.with_traceback(None)}')",
-			"            time.sleep(1)",
-			"            return self.do_request(method, url, **kwargs)",
-			"",
-			"    def get(self, url: str, **kwargs) -> requests.Response:",
-			"        return self.do_request('GET', url, **kwargs)",
-			"",
-			"    def post(self, url: str, **kwargs) -> requests.Response:",
-			"        return self.do_request('POST', url, **kwargs)",
-			""
-		],
-		"description": ""
-	},
-	"set_logger": {
-		"prefix": "set_logger",
-		"body": [
-			"LOG_FORMAT = '[{time:DD-MM-YYYY HH:mm:ss}] [{level}] {message}'",
-			"\nlogger.remove()",
-			"logger.add(LOG_FILE, format=LOG_FORMAT)",
-			"logger.add(lambda m: tqdm.write(m, end=''), format=LOG_FORMAT)"
-		],
-		"description": "sets up loguru.logger + tqdm"
-	},
-	"useragent": {
-		"prefix": "set_useragent",
-		"body": [
-			"USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '\\",
-			"    'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'"
-		],
-		"description": "sets chrome user agent"
-	},
+    "withopen": {
+        "prefix": "withopen",
+        "body": [
+            "with open('$1', '${2:r}', encoding='utf-8') as f:",
+            "    ${3:...}"
+        ],
+        "description": "open file for"
+    },
+    "do_request_function": {
+        "prefix": "f__dorequest",
+        "body": [
+            "def do_request(method: str, url: str, **kwargs) -> requests.Response:",
+            "    if 'headers' in kwargs:",
+            "        headers = kwargs.pop('headers')",
+            "    else:",
+            "        headers = {}",
+            "    headers['User-Agent'] = USER_AGENT",
+            "",
+            "    try:",
+            "        if 'timeout' not in kwargs:",
+            "            kwargs['timeout'] = 30",
+            "        response = requests.request(method, url, headers=headers, **kwargs)",
+            "        logger.info(f'[{response.status_code}] {url}')",
+            "        return response",
+            "    except (",
+            "        requests.exceptions.ConnectTimeout,",
+            "        requests.exceptions.ConnectionError,",
+            "        requests.exceptions.ProxyError,",
+            "        requests.exceptions.ReadTimeout,",
+            "        urllib3.exceptions.ReadTimeoutError,",
+            "        requests.exceptions.ChunkedEncodingError",
+            "    ) as e:",
+            "        logger.error(f'{url} {e.with_traceback(None)}')",
+            "        time.sleep(1)",
+            "        return do_request(method, url, headers=headers, **kwargs)"
+        ],
+        "description": "do_request function with logger and user agent"
+    },
+    "session_class": {
+        "prefix": "c__session_class",
+        "body": [
+            "class HttpSession(requests.Session):",
+            "    def __init__(self):",
+            "        super().__init__()",
+            "        self.headers['User-Agent'] = USER_AGENT",
+            "",
+            "    def do_request(self, method: str, url: str, **kwargs) -> requests.Response:",
+            "        try:",
+            "            if 'timeout' not in kwargs:",
+            "                kwargs['timeout'] = 30",
+            "            response = self.request(method, url, **kwargs)",
+            "            logger.info(f'[{response.status_code}] {url}')",
+            "            return response",
+            "        except (",
+            "            requests.exceptions.ConnectTimeout,",
+            "            requests.exceptions.ConnectionError,",
+            "            requests.exceptions.ProxyError,",
+            "            requests.exceptions.ReadTimeout,",
+            "            urllib3.exceptions.ReadTimeoutError,",
+            "            requests.exceptions.ChunkedEncodingError",
+            "        ) as e:",
+            "            logger.error(f'{url} {e.with_traceback(None)}')",
+            "            time.sleep(1)",
+            "            return self.do_request(method, url, **kwargs)",
+            "",
+            "    def get(self, url: str, **kwargs) -> requests.Response:",
+            "        return self.do_request('GET', url, **kwargs)",
+            "",
+            "    def post(self, url: str, **kwargs) -> requests.Response:",
+            "        return self.do_request('POST', url, **kwargs)",
+            ""
+        ],
+        "description": ""
+    },
+    "set_logger": {
+        "prefix": "set_logger",
+        "body": [
+            "LOG_FORMAT = '[{time:DD-MM-YYYY HH:mm:ss}] [{level}] {message}'",
+            "\nlogger.remove()",
+            "logger.add(LOG_FILE, format=LOG_FORMAT)",
+            "logger.add(lambda m: tqdm.write(m, end=''), format=LOG_FORMAT)"
+        ],
+        "description": "sets up loguru.logger + tqdm"
+    },
+    "useragent": {
+        "prefix": "set_useragent",
+        "body": [
+            "USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '\\",
+            "    'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'"
+        ],
+        "description": "sets chrome user agent"
+    },
 
-	"setup_parser": {
-		"prefix": "setup_parser",
-		"body": [
+    "setup_parser": {
+        "prefix": "setup_parser",
+        "body": [
             "import os",
             "import time",
             "import urllib3",
             "import pathlib",
             "import requests",
-			"import traceback",
+            "import traceback",
             "",
             "",
             "from bs4 import BeautifulSoup",
@@ -131,7 +135,7 @@
             "logger.remove()",
             "logger.add(LOG_FILE, format=LOG_FORMAT)",
             "logger.add(lambda m: tqdm.write(m, end=''), format=LOG_FORMAT)"
-		],
-		"description": "sets imports and logger"
-	}
+        ],
+        "description": "sets imports and logger"
+    }
 }
