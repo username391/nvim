@@ -4,7 +4,7 @@
 Для работы нужен установленный nodejs и пакетный менеджер npm
 
 Установка `pyright`:
-```shell
+```bash
 npm i -g pyright
 ```
 Можно еще обновить что он там обновляет, просто на всякий
@@ -14,7 +14,7 @@ npm i -g pyright
 
 Если не удается установить ruff возможно проблема в python3-venv
 (у меня возникало только на ubuntu)
-```
+```bash
 sudo apt install python3-venv
 ```
 
@@ -24,7 +24,7 @@ sudo apt install python3-venv
 ```
 
 #### Что еще нужно установить
-```shell
+```bash
 pacman -S ripgrep lazygit
 ```
 
