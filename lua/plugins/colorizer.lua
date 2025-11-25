@@ -1,7 +1,8 @@
 -- Плагин для подсветки значений цвета в коде
 
 local M = {
-	"norcalli/nvim-colorizer.lua"
+	-- "norcalli/nvim-colorizer.lua"
+	"catgoose/nvim-colorizer.lua",
 }
 
 M.event = { "BufReadPost", "BufNewFile" }
