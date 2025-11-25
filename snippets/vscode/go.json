@@ -1,12 +1,12 @@
 {
-    "test": {
-        "prefix": "test",
-        "body": [
-            "",
-            "hello",
-            "world",
-            "!"
-        ],
-        "description": "Description"
-    }
+	"test": {
+		"prefix": "test",
+		"body": [
+			"",
+			"hello",
+			"world",
+			"!"
+		],
+		"description": "Description"
+	}
 }

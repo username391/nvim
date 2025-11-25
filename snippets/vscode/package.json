@@ -1,26 +1,34 @@
 {
-    "name": "custom_snippets",
-    "engine": {
-        "vscode": "^1.11.0"
-    },
-    "contributes": {
-        "snippets": [
-            {
-                "language": ["lua"],
-                "path": "./lua.json"
-            },
-            {
-                "language": ["go"],
-                "path": "./go.json"
-            },
+	"name": "custom_snippets",
+	"engine": {
+		"vscode": "^1.11.0"
+	},
+	"contributes": {
+		"snippets": [
 			{
-				"language": ["python"],
+				"language": [
+					"lua"
+				],
+				"path": "./lua.json"
+			},
+			{
+				"language": [
+					"go"
+				],
+				"path": "./go.json"
+			},
+			{
+				"language": [
+					"python"
+				],
 				"path": "./python.json"
 			},
 			{
-				"language": ["sh"],
+				"language": [
+					"sh"
+				],
 				"path": "./bash.json"
 			}
-        ]
-    }
+		]
+	}
 }
