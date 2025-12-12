@@ -7,7 +7,6 @@ return {
 	---@diagnostic disable-next-line: undefined-doc-name
 	---@type snacks.config
 	opts = {
-
 		zen = {
 			toggles = {
 				dim = false,
