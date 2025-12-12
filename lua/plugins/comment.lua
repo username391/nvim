@@ -1,11 +1,9 @@
 -- Плагин для комментариев в коде. Не знаю,
 -- нужен ли он вообще
 
-local M = {
-	"numToStr/Comment.nvim"
+return {
+	"numToStr/Comment.nvim",
+	event = { "BufReadPost", "BufNewFile" },
+	lazy = true,
+	opts = {},
 }
-M.event = { "BufReadPost", "BufNewFile" }
-M.lazy = true
-M.opts = {}
-
-return M
