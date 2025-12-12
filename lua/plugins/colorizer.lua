@@ -2,14 +2,14 @@
 
 local M = {
 	-- "norcalli/nvim-colorizer.lua"
-	"catgoose/nvim-colorizer.lua",
+	"catgoose/nvim-colorizer.lua", -- original is deprecated
 }
 
 M.event = { "BufReadPost", "BufNewFile" }
 M.config = function()
-	local colorizer = require "colorizer"
+	local colorizer = require("colorizer")
 
-	colorizer.setup {
+	colorizer.setup({
 		css = {
 			RGB = true, -- #RGB hex codes
 			RRGGBB = true, -- #RRGGBB hex codes
@@ -25,7 +25,7 @@ M.config = function()
 		"yaml",
 		lua = { names = false },
 		"*",
-	}
+	})
 end
 
 return M
