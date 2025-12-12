@@ -36,6 +36,17 @@ return {
 		-- GV - commit browser
 		-- GV! - commit browser for current file
 	},
+
+	-- { "echasnovski/mini.notify", enabled = true },
+	-- { "echasnovski/mini.pick", enabled = true },
+	{
+		-- Make sure to set this up properly if you have lazy=true
+		"MeanderingProgrammer/render-markdown.nvim",
+		opts = {
+			file_types = { "markdown", "Avante" },
+		},
+		ft = { "markdown", "Avante" },
+	},
 }
 
 -- 	{
