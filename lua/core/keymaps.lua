@@ -7,6 +7,8 @@ local snacks = require("snacks")
 local spick = require("snacks.picker")
 -- local neoscroll = require("neoscroll")
 
+require("ufo").setup({})
+
 local noremap = { noremap = true }
 local noremap_silent = { noremap = true, silent = true }
 
@@ -1121,6 +1123,24 @@ local mappings = {
 		"<Space>sq",
 		function()
 			spick.qflist()
+		end,
+		noremap,
+	},
+
+	{
+		{ "n" },
+		"zM",
+		function()
+			require("ufo").closeAllFolds()
+		end,
+		noremap,
+	},
+
+	{
+		{ "n" },
+		"zR",
+		function()
+			require("ufo").openAllFolds()
 		end,
 		noremap,
 	},

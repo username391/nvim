@@ -15,9 +15,12 @@ vim.o.relativenumber = false
 vim.o.signcolumn = "number"
 
 -- fold
-vim.o.foldmethod = "indent"
-vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-vim.o.foldenable = false
+vim.o.foldcolumn = "1"
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+-- vim.o.foldmethod = "indent"
+-- vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldenable = true
 
 -- disable ~ chars
 vim.o.fillchars = "eob: "
