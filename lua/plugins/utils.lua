@@ -1,64 +1,54 @@
 return {
-	-- lazydev configuration moved to lua/plugins/lazydev.lua
-	{
-		"nvim-lua/plenary.nvim",
-		lazy = true,
-	},
-
-	{
-		"iamcco/markdown-preview.nvim",
-		lazy = true,
-		enabled = true,
-		build = function()
-			vim.fn["mkdp#util#install"]()
-		end,
-		ft = "markdown",
-	},
-	{
-		"dstein64/vim-startuptime",
-		init = function()
-			vim.g.startuptime_tries = 5
-		end,
-		cmd = "StartupTime",
-		dependencies = {
-			"nvim-lualine/lualine.nvim", -- Just to fix stuck issue on vim-startuptime
-		},
-	},
-
-	{
-		"tpope/vim-fugitive",
-		enabled = true,
-	},
-
-	{
-		"junegunn/gv.vim",
-		enabled = false,
-		-- GV - commit browser
-		-- GV! - commit browser for current file
-	},
-
+	-- disabled plugins, maybe will be removed later
+	-- 	{
+	--       'tzachar/local-highlight.nvim',
+	--       config = function()
+	--         require('local-highlight').setup()
+	--       end
+	-- 	},
+	--
+	-- 	{
+	-- 		"VonHeikemen/fine-cmdline.nvim",
+	-- 		dependencies = {
+	-- 			"MunifTanjim/nui.nvim"
+	-- 		}
+	-- 	},
 	-- { "echasnovski/mini.notify", enabled = true },
 	-- { "echasnovski/mini.pick", enabled = true },
-	{
-		-- Make sure to set this up properly if you have lazy=true
-		"MeanderingProgrammer/render-markdown.nvim",
-		opts = {
-			file_types = { "markdown", "Avante" },
-		},
-		ft = { "markdown", "Avante" },
-	},
+	-- {
+	-- 	"iamcco/markdown-preview.nvim",
+	-- 	lazy = true,
+	-- 	enabled = true,
+	-- 	build = function()
+	-- 		vim.fn["mkdp#util#install"]()
+	-- 	end,
+	-- 	ft = "markdown",
+	-- },
+	-- {
+	-- 	"dstein64/vim-startuptime",
+	-- 	init = function()
+	-- 		vim.g.startuptime_tries = 5
+	-- 	end,
+	-- 	cmd = "StartupTime",
+	-- 	dependencies = {
+	-- 		"nvim-lualine/lualine.nvim", -- Just to fix stuck issue on vim-startuptime
+	-- 	},
+	-- },
+	-- Replaced with lazygit
+	-- {
+	-- 	"junegunn/gv.vim",
+	-- 	enabled = false,
+	-- 	-- GV - commit browser
+	-- 	-- GV! - commit browser for current file
+	-- },
+	-- Also replaced with lazygit
+	-- {
+	-- 	"tpope/vim-fugitive",
+	-- 	enabled = true,
+	-- },
+	-- This is not needed here, it is installed as dependency for todo-comments and other plugins
+	-- {
+	-- 	"nvim-lua/plenary.nvim",
+	-- 	lazy = true,
+	-- },
 }
-
--- 	{
---       'tzachar/local-highlight.nvim',
---       config = function()
---         require('local-highlight').setup()
---       end
--- 	},
---
--- 	{
--- 		"VonHeikemen/fine-cmdline.nvim",
--- 		dependencies = {
--- 			"MunifTanjim/nui.nvim"
--- 		}
--- 	},
