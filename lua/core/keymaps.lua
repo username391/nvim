@@ -5,6 +5,7 @@ local terminal = require("nvterm.terminal")
 -- не влияет ли это на скорость?
 local snacks = require("snacks")
 local spick = require("snacks.picker")
+local neoscroll = require("neoscroll")
 
 local noremap = { noremap = true }
 local noremap_silent = { noremap = true, silent = true }
@@ -1123,6 +1124,56 @@ local mappings = {
 		end,
 		noremap,
 	},
+
+	-- neoscroll
+	{
+		{ "n" },
+		"<C-b>",
+		function()
+			neoscroll.ctrl_b({ duration = 350 })
+		end,
+		noremap,
+	},
+
+	{
+		{ "n" },
+		"<C-f>",
+		function()
+			neoscroll.ctrl_f({ duration = 350 })
+		end,
+		noremap,
+	},
+
+	{
+		{ "n" },
+		"zt",
+		function()
+			neoscroll.zt({ duration = 350 })
+		end,
+		noremap,
+	},
+
+	{
+		{ "n" },
+		"zz",
+		function()
+			neoscroll.zz({ duration = 350 })
+		end,
+		noremap,
+	},
+
+	{
+		{ "n" },
+		"zb",
+		function()
+			neoscroll.zb({ duration = 350 })
+		end,
+		noremap,
+	},
+
+	-- old keymaps
+	-- ['<C-u>'] = function() neoscroll.scroll({ duration = 250 }) end,
+	-- ['<C-d>'] = function() neoscroll.ctrl_b({ duration = 250 }) end,
 }
 
 for _, mapping in ipairs(mappings) do
