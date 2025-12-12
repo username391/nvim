@@ -5,7 +5,7 @@ return {
 	lazy = false,
 
 	---@diagnostic disable-next-line: undefined-doc-name
-	---@type snacks.Config
+	---@type snacks.config
 	opts = {
 
 		zen = {
@@ -24,7 +24,7 @@ return {
 		bigfile = { enabled = true },
 		dashboard = { enabled = true },
 
-		---@class snacks.explorer.Config
+		---@class snacks.explorer.config
 		explorer = {
 			enabled = true,
 			replace_netrw = true,
@@ -61,9 +61,9 @@ return {
 		scope = { enabled = true },
 		scroll = { enabled = true },
 
-		---@class snacks.statuscolumn.Config
-		---@field left snacks.statuscolumn.Components
-		---@field right snacks.statuscolumn.Components
+		---@class snacks.statuscolumn.config
+		---@field left snacks.statuscolumn.components
+		---@field right snacks.statuscolumn.components
 		---@field enabled? boolean
 		statuscolumn = {
 			enabled = true,
@@ -71,17 +71,17 @@ return {
 			right = { "fold", "git" }, -- priority of signs on the right (high to low)
 			folds = {
 				open = true, -- show open fold icons
-				git_hl = true, -- use Git Signs hl for fold icons
+				git_hl = false, -- use git signs hl for fold icons
 			},
 			git = {
-				patterns = { "GitSign", "MiniDiffSign" },
+				patterns = { "gitsign", "minidiffsign" },
 			},
 			refresh = 50,
 		},
 		words = { enabled = true },
 		styles = {
 			notification = {
-				wo = { wrap = true }, -- Wrap notifications
+				wo = { wrap = true }, -- wrap notifications
 			},
 		},
 	},
