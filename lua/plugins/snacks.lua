@@ -39,7 +39,10 @@ return {
 			enabled = true,
 			sources = {
 				explorer = {
-					layout = { hidden = { "input" }, layout = { position = "right" } },
+					layout = {
+						hidden = { "input" },
+						layout = { position = "right" },
+					},
 
 					follow_file = true,
 					tree = false,
