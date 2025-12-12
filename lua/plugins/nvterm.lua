@@ -1,17 +1,17 @@
 -- Терминал для nvim, больше не обновляется
 -- Вроде как toggleterm это аналог
 local M = {
-	"NvChad/nvterm"
+	"NvChad/nvterm",
 }
 
-M.config = function ()
+M.config = function()
 	require("nvterm").setup({
 		terminals = {
 			shell = vim.o.shell,
 			list = {},
 			type_opts = {
 				float = {
-					relative = 'editor',
+					relative = "editor",
 					row = 0.3,
 					col = 0.25,
 					width = 0.5,
@@ -20,13 +20,13 @@ M.config = function ()
 				},
 				horizontal = {
 					location = "rightbelow",
-					split_ratio = .3
+					split_ratio = 0.3,
 				},
 				vertical = {
 					location = "rightbelow",
-					split_ratio = .5
+					split_ratio = 0.5,
 				},
-			}
+			},
 		},
 		behavior = {
 			autoclose_on_quit = {
@@ -40,4 +40,3 @@ M.config = function ()
 end
 
 return M
-
