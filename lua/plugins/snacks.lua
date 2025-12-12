@@ -7,6 +7,7 @@ return {
 	---@diagnostic disable-next-line: undefined-doc-name
 	---@type snacks.Config
 	opts = {
+
 		zen = {
 			toggles = {
 				dim = false,
@@ -29,7 +30,7 @@ return {
 			replace_netrw = true,
 			trash = true,
 		},
-		indent = { enabled = true },
+		indent = { enabled = false },
 		input = { enabled = true },
 		notifier = {
 			enabled = true,
@@ -59,11 +60,28 @@ return {
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		scroll = { enabled = true },
-		statuscolumn = { enabled = true },
+
+		---@class snacks.statuscolumn.Config
+		---@field left snacks.statuscolumn.Components
+		---@field right snacks.statuscolumn.Components
+		---@field enabled? boolean
+		statuscolumn = {
+			enabled = true,
+			left = { "mark", "sign" }, -- priority of signs on the left (high to low)
+			right = { "fold", "git" }, -- priority of signs on the right (high to low)
+			folds = {
+				open = true, -- show open fold icons
+				git_hl = true, -- use Git Signs hl for fold icons
+			},
+			git = {
+				patterns = { "GitSign", "MiniDiffSign" },
+			},
+			refresh = 50,
+		},
 		words = { enabled = true },
 		styles = {
 			notification = {
-				-- wo = { wrap = true } -- Wrap notifications
+				wo = { wrap = true }, -- Wrap notifications
 			},
 		},
 	},
