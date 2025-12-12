@@ -4,7 +4,6 @@ return {
 	priority = 1000,
 	lazy = false,
 
-
 	---@diagnostic disable-next-line: undefined-doc-name
 	---@type snacks.Config
 	opts = {
@@ -13,11 +12,11 @@ return {
 				dim = false,
 				git_signs = true,
 				diagnostics = true,
-				hints = true
+				hints = true,
 			},
 			show = {
 				statusline = false,
-				tabline = true
+				tabline = true,
 			},
 			win = { style = "zen" },
 		},
@@ -40,7 +39,7 @@ return {
 			enabled = true,
 			sources = {
 				explorer = {
-					layout = { hidden = { "input" }, layout = { position = "right", } },
+					layout = { hidden = { "input" }, layout = { position = "right" } },
 
 					follow_file = true,
 					tree = false,
@@ -65,7 +64,7 @@ return {
 		styles = {
 			notification = {
 				-- wo = { wrap = true } -- Wrap notifications
-			}
+			},
 		},
-	}
+	},
 }
