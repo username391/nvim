@@ -1,9 +1,10 @@
 -- Нужно будет установить fzf для нечеткого поиска
 
 local M = {
-	"nvim-telescope/telescope.nvim"
+	"nvim-telescope/telescope.nvim",
 }
 M.module = true
+M.enabled = true
 M.cmd = "Telescope"
 M.dependencies = {
 	-- {
@@ -13,8 +14,8 @@ M.dependencies = {
 }
 
 M.config = function()
-	local telescope = require "telescope"
-	local actions = require "telescope.actions"
+	local telescope = require("telescope")
+	local actions = require("telescope.actions")
 
 	local pickers = {
 		buffers = {
@@ -29,22 +30,22 @@ M.config = function()
 
 		pickers = {
 			colorscheme = {
-				enable_preview = true
-			}
-		}
+				enable_preview = true,
+			},
+		},
 	}
 
 	local extensions = {
 		-- fzf = {
-			--     fuzzy = true, -- false will only do exact matching
-			--     override_generic_sorter = true, -- override the generic sorter
-			--     override_file_sorter = true, -- override the file sorter
-			--     case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-			--     -- the default case_mode is "smart_case"
-			-- },
-		}
+		--     fuzzy = true, -- false will only do exact matching
+		--     override_generic_sorter = true, -- override the generic sorter
+		--     override_file_sorter = true, -- override the file sorter
+		--     case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+		--     -- the default case_mode is "smart_case"
+		-- },
+	}
 
-	telescope.setup {
+	telescope.setup({
 		defaults = {
 			layout_config = {
 				width = 0.8,
@@ -76,7 +77,7 @@ M.config = function()
 		},
 		pickers = pickers,
 		extensions = extensions,
-	}
+	})
 
 	-- To get fzf loaded and working with telescope, you need to call
 	-- load_extension, somewhere after setup function:
@@ -84,5 +85,3 @@ M.config = function()
 end
 
 return M
-
-

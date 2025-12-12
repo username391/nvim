@@ -1,4 +1,4 @@
-local builtin = require("telescope.builtin")
+-- local builtin = require("telescope.builtin")
 local terminal = require("nvterm.terminal")
 
 -- насколько правильно делать это здесь
@@ -122,28 +122,28 @@ local mappings = {
 
 	-- LiveGrep
 	-- FIXME: fg уже занято гитом, нужно исправить
-	{
-		"n",
-		"<Space>fg",
-		builtin.live_grep,
-		noremap,
-	},
+	-- {
+	-- 	"n",
+	-- 	"<Space>fg",
+	-- 	builtin.live_grep,
+	-- 	noremap,
+	-- },
 
 	-- HelpTags (Тоже пока не знаю что это)
-	{
-		"n",
-		"<Space>fh",
-		builtin.help_tags,
-		noremap,
-	},
+	-- {
+	-- 	"n",
+	-- 	"<Space>fh",
+	-- 	builtin.help_tags,
+	-- 	noremap,
+	-- },
 
 	-- Текущие буферы
-	{
-		"n",
-		"U",
-		builtin.buffers,
-		noremap,
-	},
+	-- {
+	-- 	"n",
+	-- 	"U",
+	-- 	builtin.buffers,
+	-- 	noremap,
+	-- },
 
 	-- Комбинации клавиш для nvim-tree --
 	-- Ctrl + K - показывает данные файла
