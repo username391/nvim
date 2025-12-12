@@ -1,7 +1,7 @@
 -- Плагин с движком автодополнения
 
 local M = {
-	"hrsh7th/nvim-cmp"
+	"hrsh7th/nvim-cmp",
 }
 
 M.event = { "InsertEnter", "CmdlineEnter" }
@@ -17,29 +17,29 @@ M.dependencies = {
 	{
 		"windwp/nvim-autopairs",
 		config = function()
-			local autopairs = require "nvim-autopairs"
+			local autopairs = require("nvim-autopairs")
 
-			autopairs.setup {
+			autopairs.setup({
 				check_ts = true, -- treesitter integration
 				disable_filetype = { "TelescopePrompt" },
-			}
+			})
 
-			local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 			local cmp_status_ok, cmp = pcall(require, "cmp")
 			if not cmp_status_ok then
 				return
 			end
-			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done {})
+			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({}))
 		end,
 	},
 }
 
 M.config = function()
-	local cmp = require "cmp"
-	local luasnip = require "luasnip"
+	local cmp = require("cmp")
+	local luasnip = require("luasnip")
 
 	-- require("luasnip.loaders.from_vscode").lazy_load()
-	require("luasnip.loaders.from_vscode").lazy_load { paths = vim.fn.stdpath "config" .. "/snippets/vscode" }
+	require("luasnip.loaders.from_vscode").lazy_load({ paths = vim.fn.stdpath("config") .. "/snippets/vscode" })
 
 	local kind_icons = {
 		Text = "󰦨",
@@ -69,26 +69,26 @@ M.config = function()
 		TypeParameter = "",
 	}
 
-	cmp.setup {
+	cmp.setup({
 		snippet = {
 			expand = function(args)
 				luasnip.lsp_expand(args.body) -- For `luasnip` users.
 			end,
 		},
 
-		mapping = cmp.mapping.preset.insert {
+		mapping = cmp.mapping.preset.insert({
 			["<C-k>"] = cmp.mapping.select_prev_item(),
 			["<C-j>"] = cmp.mapping.select_next_item(),
 			["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1)),
 			["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1)),
 			["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-			["<C-e>"] = cmp.mapping {
+			["<C-e>"] = cmp.mapping({
 				i = cmp.mapping.abort(),
 				c = cmp.mapping.close(),
-			},
+			}),
 			-- Accept currently selected item. If none selected, `select` first item.
 			-- Set `select` to `false` to only confirm explicitly selected items.
-			["<CR>"] = cmp.mapping.confirm { select = false },
+			["<CR>"] = cmp.mapping.confirm({ select = false }),
 			["<Tab>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then
 					cmp.select_next_item()
@@ -114,8 +114,8 @@ M.config = function()
 			end, {
 				"i",
 				"s",
-			})
-		},
+			}),
+		}),
 
 		formatting = {
 			format = function(_, vim_item)
@@ -141,17 +141,17 @@ M.config = function()
 			--     col_offset = -3,
 			--     side_padding = 1,
 			-- },
-			documentation = cmp.config.window.bordered {
+			documentation = cmp.config.window.bordered({
 				border = "rounded",
 				winhighlight = "Normal:Normal,FloatBorder:CmpDocumentationBorder,CursorLine:CmpCursorLine,Search:Search",
 				col_offset = -3,
 				side_padding = 1,
-			},
+			}),
 		},
 		experimental = {
 			ghost_text = false,
 		},
-	}
+	})
 
 	cmp.setup.cmdline(":", {
 		mapping = cmp.mapping.preset.cmdline(),
@@ -159,15 +159,15 @@ M.config = function()
 			{ name = "cmdline" },
 		},
 		window = {
-			completion = cmp.config.window.bordered {
+			completion = cmp.config.window.bordered({
 				border = "rounded",
 				winhighlight = "Normal:Normal,FloatBorder:CmpCompletionBorder,CursorLine:CmpCursorLine,Search:Search",
 				col_offset = -3,
 				side_padding = 1,
-			},
+			}),
 		},
 		formatting = {
-			fields = { 'abbr' },
+			fields = { "abbr" },
 			format = function(_, vim_item)
 				vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
 				return vim_item
@@ -175,6 +175,5 @@ M.config = function()
 		},
 	})
 end
-
 
 return M
