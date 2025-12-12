@@ -1,13 +1,13 @@
-local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if vim.fn.isdirectory(lazypath) == 0 then
 	vim.notify("Installing lazy...", vim.log.levels.INFO, { title = "lazy.nvim" })
-	vim.fn.system {
+	vim.fn.system({
 		"git",
 		"clone",
 		"https://github.com/folke/lazy.nvim.git",
 		lazypath,
-	}
+	})
 end
 
 vim.opt.runtimepath:prepend(lazypath)
@@ -15,11 +15,11 @@ vim.opt.runtimepath:prepend(lazypath)
 local opts = {
 	git = {
 		log = { "--since=3 days ago" }, -- show commits from the last 3 days
-		timeout = 300,            -- kill processes that take more than 2 minutes
+		timeout = 300, -- kill processes that take more than 2 minutes
 		url_format = "https://github.com/%s.git",
 	},
 
-	lockfile = vim.fn.stdpath "data" .. "/lazy-lock.json", -- lockfile generated after running update.
+	lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json", -- lockfile generated after running update.
 	concurrency = nil,
 	dev = {
 		-- directory where you store your local plugin projects
@@ -85,7 +85,7 @@ local opts = {
 	performance = {
 		cache = {
 			enabled = true,
-			path = vim.fn.stdpath "state" .. "/lazy/cache",
+			path = vim.fn.stdpath("state") .. "/lazy/cache",
 			-- Once one of the following events triggers, caching will be disabled.
 			-- To cache all modules, set this to `{}`, but that is not recommended.
 			-- The default is to disable on:
@@ -110,7 +110,6 @@ local opts = {
 		},
 	},
 }
-
 
 local status_ok, lazy = pcall(require, "lazy")
 if not status_ok then
