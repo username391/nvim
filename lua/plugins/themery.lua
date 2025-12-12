@@ -1,5 +1,5 @@
 local M = {
-	"zaldih/themery.nvim"
+	"zaldih/themery.nvim",
 }
 
 M.config = function()
@@ -10,40 +10,61 @@ M.config = function()
 				name = "Catppuccin Latte",
 				colorscheme = "catppuccin-latte",
 				before = [[ vim.opt.background = "light" ]],
-				after = [[  ]]
+				after = [[  ]],
 			},
 			{
 				name = "Catppuccin Frappe",
 				colorscheme = "catppuccin-frappe",
-				before = [[ vim.opt.background = "dark" ]]
+				before = [[ vim.opt.background = "dark" ]],
 			},
 			{
 				name = "Catppuccin Macchiato",
 				colorscheme = "catppuccin-macchiato",
-				before = [[ vim.opt.background = "dark" ]]
+				before = [[ vim.opt.background = "dark" ]],
 			},
 			{
 				name = "Catppuccin Mocha",
 				colorscheme = "catppuccin-mocha",
-				before = [[ vim.opt.background = "dark" ]]
+				before = [[ vim.opt.background = "dark" ]],
 			},
 			{
 				name = "Rose Pine",
 				colorscheme = "rose-pine",
-				before = [[ vim.opt.background = "dark" ]]
+				before = [[ vim.opt.background = "dark" ]],
 			},
 			{
 				name = "Rose Pine Moon",
 				colorscheme = "rose-pine-moon",
-				before = [[ vim.opt.background = "dark" ]]
+				before = [[ vim.opt.background = "dark" ]],
 			},
 			{
 				name = "Rose Pine Dawn",
 				colorscheme = "rose-pine-dawn",
-				before = [[ vim.opt.background = "light" ]]
+				before = [[ vim.opt.background = "light" ]],
+			},
+			{
+				name = "Tokyo Night",
+				colorscheme = "tokyonight-night",
+				before = [[ vim.opt.background = "dark"]],
+			},
+			{
+				name = "Tokyo Night (Storm)",
+				colorscheme = "tokyonight-storm",
+				before = [[ vim.opt.background = "dark"]],
+			},
+			{
+				name = "Tokyo Night (Moon)",
+				colorscheme = "tokyonight-moon",
+				before = [[ vim.opt.background = "dark"]],
+			},
+
+			{
+				name = "Tokyo Night (Day)",
+				colorscheme = "tokyonight-day",
+				before = [[ vim.opt.background = "light"]],
 			},
 		},
-		livePreview = true
+		livePreview = true,
 	})
 end
 

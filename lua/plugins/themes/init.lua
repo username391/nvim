@@ -5,17 +5,26 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		config = function()
-			require "plugins.themes.catppuccin"
+			require("plugins.themes.catppuccin")
 		end,
 	},
 
 	{
-		'rose-pine/neovim',
-		name = 'rose-pine',
+		"rose-pine/neovim",
+		name = "rose-pine",
 		lazy = true,
 		priority = 1000,
-		config = function ()
-			require 'plugins.themes.rose-pine'
-		end
-	}
+		config = function()
+			require("plugins.themes.rose-pine")
+		end,
+	},
+	{
+		"folke/tokyonight.nvim",
+		name = "tokyonight",
+		lazy = true,
+		priority = 1000,
+		config = function()
+			require("plugins.themes.tokyonight")
+		end,
+	},
 }
