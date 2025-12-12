@@ -28,6 +28,15 @@ sudo apt install python3-venv
 pacman -S ripgrep lazygit
 ```
 
+```bash
+sudo npm install -g prettier
+```
+
+stylua вроде бы устанавливается через Mason:
+```
+MasonInstall stylua
+```
+
 #### Настройка темы
 Комбинация клавиш `Space + t` открывает меню для выбора темы
 
