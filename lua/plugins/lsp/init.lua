@@ -21,6 +21,7 @@ local plugins = {
 					"shfmt",
 					"prettier",
 					"djlint",
+					"shfmt",
 					-- Linters
 					-- "shellcheck",
 
