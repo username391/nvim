@@ -45,7 +45,7 @@ return {
 					},
 
 					follow_file = true,
-					tree = false,
+					tree = true,
 					focus = "list",
 					jump = { close = false },
 					auto_close = true,
@@ -53,6 +53,7 @@ return {
 						list = {
 							keys = {
 								["."] = "explorer_focus",
+								["<C-n>"] = "cancel",
 							},
 						},
 					},
