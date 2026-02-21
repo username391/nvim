@@ -772,7 +772,8 @@ local mappings = {
 		{ "n" },
 		"<Space>sd",
 		function()
-			spick.diagnostics()
+			-- spick.diagnostics()
+			vim.diagnostic.open_float()
 		end,
 		noremap,
 	},
